@@ -16,12 +16,13 @@ $(document).ready(function() {
   //draw one frame of the character
   function draw(frameX, frameY, canvasX, canvasY) {
 
-    //character animation
-    ctx.fillStyle = "#ffefc2";
-    ctx.fillRect(0, 50, canvas.width, canvas.height);
+    //background
+    ctx.drawImage(background, 0, 0);
+    /*ctx.fillStyle = "#ffefc2";
+    ctx.fillRect(0, 50, canvas.width, canvas.height);*/
 
     //stats "canvas"
-    ctx.fillStyle = "#ffffc2";
+    ctx.fillStyle = "#ffefc2";
     ctx.fillRect(0, 0, barWidth, barHeight);
 
     //set up the stress and progress bars

@@ -5,7 +5,7 @@ var fail = false;
 var count = 0;
 
 var canvasWidth = 750;
-var canvasHeight = 570;
+var canvasHeight = 400;
 
 var barWidth = canvasWidth;
 var barHeight = 50;
