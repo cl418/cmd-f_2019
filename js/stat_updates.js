@@ -5,6 +5,7 @@ function checkMaxStress(){
     ctx.stroke();
     stress = 0;
     fail = true;
+    ctx.globalAlpha = 0.1;
   }
 }
 
