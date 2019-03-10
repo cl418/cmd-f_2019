@@ -4,14 +4,18 @@ var ctx = canvas.getContext('2d');
 
 var canvasWidth = 750;
 var canvasHeight = 570;
-var tileWidth = 660;
-var tileHeight = 660;
+
+var barWidth = canvasWidth;
+var barHeight = 50;
 
 var stress = 0;
 var maxStress = 100;
+var stressColor = "#ffb266";
+
 
 var progress = 0;
 var maxProgress = 100;
+var progressColor = "#66DCFF";
 
 var lastX;
 var lastY;
@@ -33,6 +37,15 @@ player.onload = function () {
 };
 player.src = "./assets/char.png";
 
+
+//fill up the rectangle based on how much stress you have in percentages
+function drawStatsBar(canv, canvWidth, canvHeight, stressLevel, xPos, color) {
+  let level = (stressLevel * canvWidth)/100;
+  
+  ctx.fillStyle = color;
+  canv.fillRect(xPos, 0, level, canvHeight);
+}
+
 //draw one frame of the character
 function draw(frameX, frameY, canvasX, canvasY) {
 
@@ -42,7 +55,11 @@ function draw(frameX, frameY, canvasX, canvasY) {
 
   //stats "canvas"
   ctx.fillStyle = "#ffffc2";
-  ctx.fillRect(0, 0, 660, 50);
+  ctx.fillRect(0, 0, barWidth, barHeight);
+
+  //fill up the stress and progress bars
+  drawStatsBar(ctx, barWidth/2, barHeight, stress, 0, stressColor);
+  drawStatsBar(ctx, barWidth/2, barHeight, progress, barWidth/2, progressColor);
 
   //other things
   ctx.drawImage(desk, 300, 250);
@@ -55,6 +72,8 @@ function draw(frameX, frameY, canvasX, canvasY) {
   canvasX, canvasY,
   width, height);
 }
+
+
 
 //one step of animation
 function update() {
