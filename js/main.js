@@ -12,6 +12,8 @@ var maxStress = 100;
 var progress = 0;
 var maxProgress = 100;
 
+var lastX;
+var lastY;
 var currentX = 10;
 var currentY = 10;
 
@@ -33,12 +35,12 @@ player.src = "./assets/char.png";
 //draw one frame of the character
 function draw(frameX, frameY, canvasX, canvasY) {
   //draw other things
+  ctx.fillStyle = "#ffefc2";
+  ctx.fillRect(0,0,canvas.width, canvas.height);
   ctx.drawImage(desk, 300, 250);
   ctx.drawImage(dog, 100, 50);
 
   //character animation
-  ctx.fillStyle = "#ffefc2";
-  ctx.fillRect(0,0,canvas.width, canvas.height);
   ctx.drawImage(player,
   frameX * width, frameY * height,
   width, height,
@@ -59,6 +61,8 @@ function update() {
 
     //draw the character frame
     draw(cycleLoop[currentLoopIndex], 0, currentX, currentY);
+    lastX = currentX;
+    lastY = currentY;
     currentLoopIndex++;
     if (currentLoopIndex >= cycleLoop.length) {
       currentLoopIndex = 0;
