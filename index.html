@@ -30,8 +30,6 @@
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
 
-    <script src = "js/bg.js"></script>
-
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -48,9 +46,45 @@
   </head>
 
   <body>
+    <script>
+      var canvas = document.createElement("canvas");
+      var ctx = canvas.getContext('2d');
+      canvas.width = 800;
+      canvas.height = 800;
+      document.body.appendChild(canvas);
+
+      /*var stress = 0;
+      var maxStress = 100;
+
+      var progress = 0;
+      var maxProgress = 0;
+
+      var currentX = 10;
+      var currentY = 10;*/
+
+      var playerReady = false;
+      var player = new Image();
+      player.onload = function () {
+        // show the background image
+        playerReady = true;
+      };
+      player.src = "../assets/center1.png";
+
+      var render = function (){
+        if (playerReady) {
+          ctx.drawImage(player, 200, 200);
+        }
+      };
+
+      var main = function (){
+        render();
+      };
+
+      main();
+    </script>
 
     <!-- container for a stats bar -->
-        <div class="stats_bar">
+        <!--<div class="stats_bar">
 
           <div class = "col-sm-6" style="background-color:darkgoldenrod">stress bar</div>
           <div class = "col-sm-6">progress bar</div>
@@ -65,7 +99,8 @@
 
     </div>-->
 
-
+        <!--<img id="player" src="/../assets/alienPink_badge1.png"/>
+        <canvas id="myCanvas" width="800" height="800"></canvas>-->
 
     <!--<nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
