@@ -2,28 +2,15 @@ body {
   padding-top: 0px;
 }
 
-canvas {
-  background-color: #ffe4a1;
-  border: 1px solid black;
-}
 .starter-template {
   padding: 40px 15px;
   text-align: center;
 }
 
-.stats_bar {
-  padding-top: 0px;
+#gameCanvas {
+  position: relative;
 }
 
-.col-sm-6 {
-  height: 10vh;
-}
-
-.col-sm-12 {
-  float: bottom;
-  height: 80vh;
-}
-
-.playground {
-  background-color: #000000;
+#stressCanvas {
+  position: absolute;
 }

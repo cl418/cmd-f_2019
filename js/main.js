@@ -1,8 +1,9 @@
-var canvas = document.getElementById('canvas');
+var canvas = document.getElementById('gameCanvas');
 var ctx = canvas.getContext('2d');
 
-var canvasWidth = 660;
-var canvasHeight = 660;
+
+var canvasWidth = 750;
+var canvasHeight = 570;
 var tileWidth = 660;
 var tileHeight = 660;
 
@@ -32,11 +33,17 @@ player.onload = function () {
 player.src = "./assets/char.png";
 //ctx.drawImage(player, 200, 200);
 
-//draw one frame of the character
+//draw one frame of the screen
 function drawFrame(frameX, frameY, canvasX, canvasY) {
 
+  //game canvas
   ctx.fillStyle = "#ffefc2";
-  ctx.fillRect(0,0,canvas.width, canvas.height);
+  ctx.fillRect(0, 50, canvas.width, canvas.height);
+
+  //stats "canvas"
+  ctx.fillStyle = "#ffffc2";
+  ctx.fillRect(0, 0, 660, 50);
+
   ctx.drawImage(player,
   frameX * width, frameY * height,
   width, height,
