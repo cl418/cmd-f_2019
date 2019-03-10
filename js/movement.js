@@ -49,6 +49,14 @@ function checkLocation(){
     objectCode = 1
   }
 
+  //dog
+  if (currentX > 75 && currentX < 140 &&
+      currentY > 20 && currentY < 82) {
+    currentX = lastX;
+    currentY = lastY;
+    objectCode = 2
+  }
+
   chooseAction(objectCode);
 }
 
