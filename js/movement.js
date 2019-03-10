@@ -1,28 +1,28 @@
 function leftArrowPressed(){
-  currentX -= 1;
+  currentX -= 5;
 }
 
 function rightArrowPressed(){
-  currentX += 1;
+  currentX += 5;
 }
 
 function upArrowPressed(){
-  currentY -= 1;
+  currentY -= 5;
 }
 
 function downArrowPressed(){
-  currentY += 1;
+  currentY += 5;
 }
 
 function checkBorders(){
-  if (currentX > 19){
-    currentX = 19;
+  if (currentX > 660){
+    currentX = 660;
   }
   if (currentX < 0){
     currentX = 0;
   }
-  if (currentY > 19){
-    currentY = 19;
+  if (currentY > 660){
+    currentY = 660;
   }
   if (currentY < 0){
     currentY = 0;
@@ -47,9 +47,8 @@ function movePlayer(evt) {
       downArrowPressed();
       checkBorders();
       break;
-      }
-  };
-}
+  }
+};
 
 document.addEventListener("keydown", movePlayer);
 
