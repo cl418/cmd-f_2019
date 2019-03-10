@@ -1,6 +1,4 @@
-$(document).ready(function(){
-
-  var canvas = document.getElementById('myCanvas');
+  var canvas = document.getElementById('canvas');
   var ctx = canvas.getContext('2d');
 
   var stress = 0;
@@ -14,8 +12,7 @@ $(document).ready(function(){
 
   var player = new Image();
   player.onload = function () {
-      ctx.drawImage(player, 400, 400);
-  }
-  player.src = "/../assets/alienPink_badge1.png";
-
-});
+    ctx.drawImage(player, 200, 200);
+  };
+  player.src = "./assets/alienPink_badge1.png";
+  ctx.drawImage(player, 200, 200);
