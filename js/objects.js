@@ -14,7 +14,6 @@ background.onload = function() {
 };
 background.src = "./assets/background.png";
 
-
 function chooseAction(objectCode){
   if (objectCode == 0) {
     return;

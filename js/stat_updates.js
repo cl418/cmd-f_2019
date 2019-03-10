@@ -41,6 +41,10 @@ function increaseProgress() {
 function coding(){
   stress += mediumIncrease;
   progress += smallIncrease;
+  drawEmotes = true;
+  //the three dots = (5, 10)
+  emoteIndexX = 5;
+  emoteIndexY = 10;
   checkMaxStress();
 }
 
@@ -53,6 +57,10 @@ function talkToMentor() {
 
 function petDog(){
   stress -= highIncrease;
+  drawEmotes = true;
+  //heart = (1, 6)
+  emoteIndexX = 1;
+  emoteIndexY = 6;
   minStressCheck();
 }
 

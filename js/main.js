@@ -40,6 +40,12 @@ $(document).ready(function() {
     ctx.drawImage(desk, 300, 250);
     ctx.drawImage(dog, 100, 50);
 
+    //draw emotes!
+    if(drawEmotes) {
+      ctx.drawImage(emotes, emoteIndexX*16, emoteIndexY*16, 16, 16, currentX-17, currentY, 16, 16);
+      emoteCount++;
+    }
+
     //player
     ctx.drawImage(player,
     frameX * width, frameY * height,
@@ -69,6 +75,7 @@ $(document).ready(function() {
         currentLoopIndex = 0;
       }
 
+
       //other functions that require requestAnimationFrame need to go here
       //there should only be one requestAnimationFrame
       increaseStress();
@@ -87,8 +94,14 @@ $(document).ready(function() {
           return;
         }
       }
-
+        
       window.requestAnimationFrame(update);
+      //quick fix of emotes blanking out
+      if(emoteCount >= 40) {
+        drawEmotes = false;
+        emoteCount = 0;
+      }
+      
   }
 
   //actual animation

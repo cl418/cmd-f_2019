@@ -34,3 +34,11 @@ const cycleLoopX = [0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 1, 1, 1, 1];
 var cycleLoopY = 0;
 var currentLoopIndex = 0;
 var frameCount = 0;
+
+//EMOTES
+var emotes = new Image();
+emotes.src = "./assets/emotes.png"
+var emoteIndexX = 0;
+var emoteIndexY = 0;
+var emoteCount = 0;
+var drawEmotes = false;
