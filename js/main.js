@@ -74,6 +74,11 @@ $(document).ready(function() {
       canvasX, canvasY,
       width, height);
 
+      //message bar
+      ctx.fillstyle = "black";
+      ctx.fillRect(0, canvasHeight - 50, canvasWidth, canvasHeight - 50);
+      ctx.stroke();
+
       //message
       console.log(messageCode);
       printMessage();

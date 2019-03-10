@@ -13,11 +13,13 @@
 var buffer = 10;
 
 function printMessage() {
+  ctx.fillStyle = "white";
+  ctx.font = "25px pixelFont";
   if (messageCode == 0){
-    ctx.fillText("Hmmm... What should I do?", buffer, canvasHeight - 25);
+    ctx.fillText("Hmmm... What should I do?", buffer, canvasHeight - 20);
   }
   else if (messageCode == 1) {
-    ctx.fillText("You struggled with your project!", buffer, canvasHeight - 25);
+    ctx.fillText("You struggled with your project!", buffer, canvasHeight - 20);
   }
   else if (messageCode == 2) {
     ctx.fillText("Dogs are great", buffer, canvasHeight - 25);
