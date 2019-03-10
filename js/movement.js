@@ -32,8 +32,8 @@ function checkLocation(){
     currentX = 0;
   }
   //bottom
-  if (currentY > 368){
-    currentY = 368;
+  if (currentY > 318){
+    currentY = 318;
   }
   //top
   if (currentY < 50){
@@ -113,8 +113,6 @@ function movePlayer(evt) {
       messageCode = 0;
       break;
       case 88:
-      ctx.fillStyle = "black";
-      ctx.font = "25px pixelFont";
       chooseAction(objectCode);
       break;
   }
