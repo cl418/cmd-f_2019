@@ -20,6 +20,5 @@ function chooseAction(objectCode){
   }
   if (objectCode == 2) {
     petDog();
-    console.log("much wow");
   }
 }

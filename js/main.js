@@ -1,11 +1,10 @@
 var canvas = document.getElementById('gameCanvas');
 var ctx = canvas.getContext('2d');
 
+var fail = false;
 
 var canvasWidth = 750;
 var canvasHeight = 570;
-var tileWidth = 660;
-var tileHeight = 660;
 
 var stress = 0;
 var maxStress = 100;
@@ -58,7 +57,8 @@ function draw(frameX, frameY, canvasX, canvasY) {
 
 //one step of animation
 function update() {
-  //to slow down the character
+  if (!fail) {
+    //to slow down the character
     frameCount++;
     if(frameCount < 2) {
       window.requestAnimationFrame(update);
@@ -81,6 +81,16 @@ function update() {
     increaseStress();
 
     window.requestAnimationFrame(update);
+  }
+
+  $(document).ready(function() {
+     $('#overlay').animate({
+       opacity: 1,
+     }, 5000, function() {
+        // Animation complete.
+     });
+  });
+
 }
 
   //actual animation
