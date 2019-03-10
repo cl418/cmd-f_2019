@@ -29,6 +29,9 @@ function chooseAction(objectCode){
   if (objectCode == 2) {
     petDog();
   }
+  if(objectCode == 3) {
+    groupInteraction();
+  }
 }
 
 function interact(evt) {

@@ -1,24 +1,28 @@
 function leftArrowPressed(){
   currentX -= 5;
   cycleLoopY = 1;
+  console.log("currentX = " + currentX);
   //movementTrue = true;
 }
 
 function rightArrowPressed(){
   currentX += 5;
   cycleLoopY = 2;
+  console.log("currentX = " + currentX);
   //movementTrue = true;
 }
 
 function upArrowPressed(){
   currentY -= 5;
   cycleLoopY = 3;
+  console.log("currentY = " + currentY);
   //movementTrue = true;
 }
 
 function downArrowPressed(){
   currentY += 5;
   cycleLoopY = 0;
+  console.log("currentY = " + currentY);
   //movementTrue = true;
 }
 
@@ -64,7 +68,15 @@ function checkLocation(){
     objectCode = 2
   }
 
-  else {
+  else if (currentX > 75 && currentX < 170 &&
+      currentY > 220 && currentY < 290) {
+        currentX = lastX;
+        currentY = lastY;
+        objectCode = 3;
+  }
+
+
+ else {
     objectCode = 0;
   }
 }
