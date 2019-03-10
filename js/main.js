@@ -1,8 +1,9 @@
-var canvas = document.getElementById('canvas');
+var canvas = document.getElementById('gameCanvas');
 var ctx = canvas.getContext('2d');
 
-var canvasWidth = 660;
-var canvasHeight = 660;
+
+var canvasWidth = 750;
+var canvasHeight = 570;
 var tileWidth = 660;
 var tileHeight = 660;
 
@@ -15,7 +16,7 @@ var maxProgress = 100;
 var lastX;
 var lastY;
 var currentX = 10;
-var currentY = 10;
+var currentY = 60;
 
 //player animation variables
 const width = 33;
@@ -34,13 +35,20 @@ player.src = "./assets/char.png";
 
 //draw one frame of the character
 function draw(frameX, frameY, canvasX, canvasY) {
-  //draw other things
+
+  //character animation
   ctx.fillStyle = "#ffefc2";
-  ctx.fillRect(0,0,canvas.width, canvas.height);
+  ctx.fillRect(0, 50, canvas.width, canvas.height);
+
+  //stats "canvas"
+  ctx.fillStyle = "#ffffc2";
+  ctx.fillRect(0, 0, 660, 50);
+
+  //other things
   ctx.drawImage(desk, 300, 250);
   ctx.drawImage(dog, 100, 50);
 
-  //character animation
+  //player
   ctx.drawImage(player,
   frameX * width, frameY * height,
   width, height,

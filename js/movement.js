@@ -23,14 +23,18 @@ function checkLocation(){
   if (currentX > 612){
     currentX = 612;
   }
+  //right
   if (currentX < 0){
     currentX = 0;
   }
+  //bottom
   if (currentY > 612){
     currentY = 612;
   }
-  if (currentY < 0){
-    currentY = 0;
+  //top
+  if (currentY < 50){
+    console.log(currentY);
+    currentY = 50;
   }
 
   /**
