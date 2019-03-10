@@ -1,20 +1,24 @@
 function leftArrowPressed(){
   currentX -= 5;
+  cycleLoopY = 2;
   //movementTrue = true;
 }
 
 function rightArrowPressed(){
   currentX += 5;
+  cycleLoopY = 1;
   //movementTrue = true;
 }
 
 function upArrowPressed(){
   currentY -= 5;
+  cycleLoopY = 3;
   //movementTrue = true;
 }
 
 function downArrowPressed(){
   currentY += 5;
+  cycleLoopY = 0;
   //movementTrue = true;
 }
 
