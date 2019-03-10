@@ -27,14 +27,16 @@ var frameCount = 0;
 var player = new Image();
 player.onload = function () {
   init();
-  //ctx.drawImage(player, 200, 200);
 };
 player.src = "./assets/char.png";
-//ctx.drawImage(player, 200, 200);
 
 //draw one frame of the character
-function drawFrame(frameX, frameY, canvasX, canvasY) {
+function draw(frameX, frameY, canvasX, canvasY) {
+  //draw other things
+  ctx.drawImage(desk, 300, 250);
+  ctx.drawImage(dog, 100, 50);
 
+  //character animation
   ctx.fillStyle = "#ffefc2";
   ctx.fillRect(0,0,canvas.width, canvas.height);
   ctx.drawImage(player,
@@ -56,7 +58,7 @@ function update() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     //draw the character frame
-    drawFrame(cycleLoop[currentLoopIndex], 0, currentX, currentY);
+    draw(cycleLoop[currentLoopIndex], 0, currentX, currentY);
     currentLoopIndex++;
     if (currentLoopIndex >= cycleLoop.length) {
       currentLoopIndex = 0;
