@@ -85,28 +85,28 @@ function checkLocation(){
     objectCode = 4;
   }
 
-  //plant
+  //plants
   else if ((currentX > 570 && currentX < 615 && currentY > 118 && currentY < 170) ||
            (currentX > 370 && currentX < 415 && currentY > 318 && currentY < 370) ||
-           (currentX > 20 && currentX < 65 && currentY > 68 && currentY < 120)/* ||
-           (currentX >  && currentX <  && currentY >  && currentY < )*/) {
+           (currentX > 20 && currentX < 65 && currentY > 68 && currentY < 120) ||
+           (currentX > 690 && currentX < 735 && currentY > 48 && currentY < 100)) {
     currentX = lastX;
     currentY = lastY;
     objectCode = 5;
   }
 
-  else if (currentX > 480 && currentX < 585 
+  else if (currentX > 480 && currentX < 585
       && currentY > 45 && currentY < 95) {
       currentX = lastX;
       currentY = lastY;
-      objectCode = 6; 
+      objectCode = 6;
    }
 
   else if(currentX > 585 && currentX < 700 &&
       currentY > 45 && currentY < 95) {
         currentX = lastX;
         currentY = lastY;
-        objectCode = 7; 
+        objectCode = 7;
   }
 
  else {

@@ -45,6 +45,11 @@ function groupInteraction() {
   emoteIndexY = 0;
 }
 
+function eatBadly(){
+  stress += mediumIncrease;
+  checkMaxStress();
+}
+
 //STRESS IS DECREASING?? WOW (aka progress related things)
 function checkMaxProgress() {
   if (progress >= maxProgress) {
@@ -74,7 +79,12 @@ function petDog(){
   minStressCheck();
 }
 
-function drinkWater(){
+function eatHealthy(){
+  stress -= mediumIncrease;
+  minStressCheck();
+}
+//NONE OF THESE WERE ACTUALLY USED
+/*function drinkWater(){
   stress -= mediumIncrease;
   minStressCheck();
 }
@@ -87,4 +97,4 @@ function meditate(){
 function takeAHike(){
   stress -= highIncrease;
   minStressCheck();
-}
+}*/

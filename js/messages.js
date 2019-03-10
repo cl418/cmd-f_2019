@@ -4,10 +4,10 @@
 * 1 = code
 * 2 = petDog
 * 3 = groupInteraction
-* 4 = petDog
-* 5 = drinkWater
-* 6 = meditate
-* 7 = takeAHike
+* 4 = NOT IN USE
+* 5 = plants
+* 6 = goodFood
+* 7 = badFood
 **/
 
 var buffer = 5;
@@ -26,5 +26,14 @@ function printMessage() {
   }
   else if (messageCode == 3) {
     ctx.fillText("They all know what they're doing....", buffer, canvasHeight + 20);
+  }
+  else if (messageCode == 5) {
+    ctx.fillText("What a nice plant", buffer, canvasHeight + 20);
+  }
+  else if (messageCode == 6) {
+    ctx.fillText("The food was great!", buffer, canvasHeight + 20);
+  }
+  else if (messageCode == 7) {
+    ctx.fillText("I.... don't feel so good.", buffer, canvasHeight + 20);
   }
 }

@@ -70,12 +70,17 @@ function chooseAction(objectCode){
     emoteIndexX = 5;
     emoteIndexY = 10;
   }
+  else if (objectCode == 5) {
+    messageCode = 5;
+  }
   else if (objectCode == 6) {
     //good food
-
+    messageCode = 6
+    eatHealthy();
   }
   else if (objectCode == 7) {
     //bad food
-
+    messageCode = 7;
+    eatBadly();
   }
 }
