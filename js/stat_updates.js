@@ -9,16 +9,6 @@ function checkMaxStress(){
   }
 }
 
-function increaseStress(){
-  stress += 0.1;
-  checkMaxStress();
-}
-
-function coding(){
-  stress += 10;
-  checkMaxStress();
-}
-
 //STRESS IS DECREASIN?? WOW
 function minStressCheck(){
   if (stress < 0) {
@@ -26,22 +16,57 @@ function minStressCheck(){
   }
 }
 
+var smallIncrease = 0.5;
+var mediumIncrease = 1;
+var highIncrease = 3;
+
+function checkMaxProgress() {
+  if (progress >= maxProgress) {
+    progress = 0;
+    win = true;
+    //add a win condition
+  }
+}
+
+function increaseStress(){
+  stress += 0.05;
+  checkMaxStress();
+}
+
+function increaseProgress() {
+  progress += 1;
+  checkMaxProgress();
+}
+
+function coding(){
+  stress += mediumIncrease;
+  progress += smallIncrease;
+  checkMaxStress();
+}
+
+function talkToMentor() {
+  progress += highIncrease;
+  stress -= highIncrease;
+  minStressCheck();
+  checkMaxProgress();
+}
+
 function petDog(){
-  stress -= 10;
+  stress -= highIncrease;
   minStressCheck();
 }
 
 function drinkWater(){
-  stress -= 5;
+  stress -= mediumIncrease;
   minStressCheck();
 }
 
 function meditate(){
-  stress -= 15;
+  stress -= highIncrease;
   minStressCheck();
 }
 
 function takeAHike(){
-  stress -= 20;
+  stress -= highIncrease;
   minStressCheck();
 }

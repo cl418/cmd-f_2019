@@ -14,19 +14,23 @@ $(document).ready(function() {
 
     //stats "canvas"
     ctx.fillStyle = "#ffffc2";
-    ctx.fillRect(0, 0, 660, 50);
+    ctx.fillRect(0, 0, barWidth, barHeight);
+
+    //set up the stress and progress bars
+    drawStatsBar(ctx, barWidth/2, barHeight, stress, 0, stressColor);
+
+    ctx.fillStyle = "#000";
+    ctx.font = "20px Verdana";
+    ctx.fillText("Stress", 5, barHeight-5);
+
+    drawStatsBar(ctx, barWidth/2, barHeight, progress, barWidth/2, progressColor);
+    ctx.fillStyle = "#000";
+    ctx.fillText("Progress", barWidth/2+5, barHeight-5);
 
     //other things
     ctx.drawImage(desk, 300, 250);
     ctx.drawImage(dog, 100, 50);
-
-    //player
-    ctx.drawImage(player,
-    frameX * width, frameY * height,
-    width, height,
-    canvasX, canvasY,
-    width, height);
-  }
+}
 
   //one step of animation
   function update() {
