@@ -20,3 +20,17 @@ function chooseAction(objectCode){
     petDog();
   }
 }
+
+function interact(evt) {
+  switch (evt.keyCode) {
+      case 88:
+      chooseAction(objectCode);
+      break;
+  }
+};
+
+document.addEventListener("keypress", interact);
+
+function interactUpdate(){
+  interact(evt);
+}

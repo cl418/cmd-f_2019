@@ -43,7 +43,6 @@ function checkLocation(){
   * 1 = desk
   * 2 = dog
   **/
-  var objectCode = 0;
 
   //desk
   if (currentX > 267 && currentX < 332 &&
@@ -54,14 +53,16 @@ function checkLocation(){
   }
 
   //dog
-  if (currentX > 75 && currentX < 140 &&
+  else if (currentX > 75 && currentX < 140 &&
       currentY > 20 && currentY < 82) {
     currentX = lastX;
     currentY = lastY;
     objectCode = 2
   }
 
-  chooseAction(objectCode);
+  else {
+    objectCode = 0;
+  }
 }
 
 function movePlayer(evt) {
@@ -81,6 +82,9 @@ function movePlayer(evt) {
       case 40:
       downArrowPressed();
       checkLocation();
+      break;
+      case 88:
+      chooseAction(objectCode);
       break;
   }
 };
