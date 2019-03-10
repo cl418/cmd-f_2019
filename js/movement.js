@@ -19,14 +19,14 @@ function downArrowPressed(){
 }
 
 function checkBorders(){
-  if (currentX > 660){
-    currentX = 660;
+  if (currentX > 612){
+    currentX = 612;
   }
   if (currentX < 0){
     currentX = 0;
   }
-  if (currentY > 660){
-    currentY = 660;
+  if (currentY > 612){
+    currentY = 612;
   }
   if (currentY < 0){
     currentY = 0;
