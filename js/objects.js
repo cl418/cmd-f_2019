@@ -34,6 +34,11 @@ single3.onload = function() {
   };
 single3.src = "./assets/single3.png";
 
+var plant = new Image();
+plant.onload = function() {
+};
+plant.src = "./assets/small_plant.png";
+
 function chooseAction(objectCode){
   if (objectCode == 0) {
     messageCode = 0;

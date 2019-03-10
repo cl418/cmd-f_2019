@@ -32,8 +32,8 @@ function checkLocation(){
     currentX = 0;
   }
   //bottom
-  if (currentY > 318){
-    currentY = 318;
+  if (currentY > 345){
+    currentY = 345;
   }
   //top
   if (currentY < 50){
@@ -45,6 +45,9 @@ function checkLocation(){
   * 0 = nothing
   * 1 = desk
   * 2 = dog
+  * 3 = group w table
+  * 4 = single peoples
+  * 5 = plant
   **/
 
   //your desk
@@ -80,7 +83,16 @@ function checkLocation(){
     currentX = lastX;
     currentY = lastY;
     objectCode = 4;
+  }
 
+  //plant
+  else if ((currentX > 570 && currentX < 615 && currentY > 118 && currentY < 170) ||
+           (currentX > 370 && currentX < 415 && currentY > 318 && currentY < 370) ||
+           (currentX > 20 && currentX < 65 && currentY > 68 && currentY < 120)/* ||
+           (currentX >  && currentX <  && currentY >  && currentY < )*/) {
+    currentX = lastX;
+    currentY = lastY;
+    objectCode = 5;
   }
 
  else {
