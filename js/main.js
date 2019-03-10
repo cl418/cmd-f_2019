@@ -21,7 +21,7 @@ var currentY = 10;
     //ctx.drawImage(player, 200, 200);
   };
   player.src = "./assets/char.png";
-  ctx.drawImage(player, 200, 200);
+  //ctx.drawImage(player, 200, 200);
 
   //player animation variables
   const width = 33;
@@ -32,6 +32,9 @@ var currentY = 10;
 
   //draw one frame of the character
   function drawFrame(frameX, frameY, canvasX, canvasY) {
+
+    ctx.fillStyle = "#ffefc2";
+    ctx.fillRect(0,0,canvas.width, canvas.height);
     ctx.drawImage(player,
     frameX * width, frameY * height,
     width, height,
