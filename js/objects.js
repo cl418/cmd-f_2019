@@ -19,6 +19,16 @@ group.onload = function() {
 };
 group.src = "./assets/group.png";
 
+var single1 = new Image();
+single1.onload = function() {
+  };
+single1.src = "./assets/single1.png";
+
+var single2 = new Image();
+single2.onload = function() {
+};
+single1.src = "./assets.single2.png";
+
 function chooseAction(objectCode){
   if (objectCode == 0) {
     return;

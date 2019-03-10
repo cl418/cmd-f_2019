@@ -37,9 +37,10 @@ $(document).ready(function() {
     ctx.fillText("Progress", barWidth/2+5, barHeight-5);
 
     //other things
-    ctx.drawImage(desk, 300, 250);
-    ctx.drawImage(dog, 100, 50);
-    ctx.drawImage(group, 100, 250);
+    ctx.drawImage(desk, 250, 280);
+    ctx.drawImage(dog, 100, 60);
+    ctx.drawImage(group, 100, 280);
+    ctx.drawImage(single1, 380, 280);
 
     //draw emotes!
     if(drawEmotes) {

@@ -52,9 +52,9 @@ function checkLocation(){
   * 2 = dog
   **/
 
-  //desk
-  if (currentX > 267 && currentX < 332 &&
-      currentY > 216 && currentY < 283) {
+  //your desk
+  if (currentX > 225 && currentX < 280 &&
+      currentY > 250 && currentY < 290) {
     currentX = lastX;
     currentY = lastY;
     objectCode = 1
@@ -68,8 +68,9 @@ function checkLocation(){
     objectCode = 2
   }
 
+  //group with a table
   else if (currentX > 75 && currentX < 170 &&
-      currentY > 220 && currentY < 290) {
+      currentY > 250 && currentY < 310) {
         currentX = lastX;
         currentY = lastY;
         objectCode = 3;

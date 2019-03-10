@@ -1,7 +1,7 @@
 //STRESS... IS... INCREASING (aka stress related things)
 var smallIncrease = 1;
 var mediumIncrease = 2;
-var highIncrease = 4;
+var highIncrease = 3;
 
 function checkMaxStress(){
   if (stress > maxStress){
@@ -20,13 +20,16 @@ function increaseStress(){
   checkMaxStress();
 }
 
+//the three dots emote = (5, 10)
+
 function coding(){
-  stress += mediumIncrease;
+  stress += highIncrease;
+  //progress += smallIncrease;
   progress += smallIncrease;
   drawEmotes = true;
-  //the three dots = (5, 10)
-  emoteIndexX = 5;
-  emoteIndexY = 10;
+  //tangled emote (9, 0)
+  emoteIndexX = 9;
+  emoteIndexY = 0;
   checkMaxStress();
   checkMaxProgress();
   if (win || lose) {
