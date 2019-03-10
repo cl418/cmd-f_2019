@@ -7,12 +7,13 @@
   </head>
 
   <body>
+    <canvas id="mycanvas" width="800" height="800"></canvas>
+
     <script>
-      var canvas = document.createElement("canvas");
+      var canvas = document.getElementById("mycanvas");
       var ctx = canvas.getContext('2d');
       canvas.width = 800;
       canvas.height = 800;
-      document.body.appendChild(canvas);
 
       /*var stress = 0;
       var maxStress = 100;
@@ -23,25 +24,13 @@
       var currentX = 10;
       var currentY = 10;*/
 
-      var playerReady = false;
       var player = new Image();
       player.onload = function () {
-        // show the background image
-        playerReady = true;
+        ctx.drawImage(player, 200, 200);
       };
-      player.src = "assets/center1.png";
+      player.src = "assets/alienPink_badge1.png";
+      ctx.drawImage(player, 200, 200);
 
-      var render = function (){
-        if (playerReady) {
-          ctx.drawImage(player, 200, 200);
-        }
-      };
-
-      var main = function (){
-        render();
-      };
-
-      main();
     </script>
 
     <!-- container for a stats bar -->
