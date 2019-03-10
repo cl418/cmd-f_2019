@@ -83,6 +83,20 @@ function checkLocation(){
 
   }
 
+  else if (currentX > 480 && currentX < 585 
+      && currentY > 45 && currentY < 95) {
+      currentX = lastX;
+      currentY = lastY;
+      objectCode = 6; 
+   }
+
+  else if(currentX > 585 && currentX < 700 &&
+      currentY > 45 && currentY < 95) {
+        currentX = lastX;
+        currentY = lastY;
+        objectCode = 7; 
+  }
+
  else {
     objectCode = 0;
   }

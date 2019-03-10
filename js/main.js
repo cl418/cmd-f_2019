@@ -60,6 +60,8 @@ $(document).ready(function() {
       ctx.drawImage(single1, 380, 280);
       ctx.drawImage(single2, 480, 280);
       ctx.drawImage(single3, 590, 280);
+      ctx.drawImage(goodFood, 500, 50);
+      ctx.drawImage(badFood, 600, 50);
 
       //draw emotes!
       if(drawEmotes) {
