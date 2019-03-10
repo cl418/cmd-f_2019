@@ -1,6 +1,7 @@
 var canvas = document.getElementById('gameCanvas');
 var ctx = canvas.getContext('2d');
 
+var intro = true;
 var win = false;
 var lose = false;
 var countWin = 0;
