@@ -60,11 +60,11 @@ $(document).ready(function() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       //draw the character frame
-      draw(cycleLoop[currentLoopIndex], 0, currentX, currentY);
+      draw(cycleLoopX[currentLoopIndex], cycleLoopY, currentX, currentY);
       lastX = currentX;
       lastY = currentY;
       currentLoopIndex++;
-      if (currentLoopIndex >= cycleLoop.length) {
+      if (currentLoopIndex >= cycleLoopX.length) {
         currentLoopIndex = 0;
       }
 

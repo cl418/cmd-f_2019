@@ -1,12 +1,12 @@
 function leftArrowPressed(){
   currentX -= 5;
-  cycleLoopY = 2;
+  cycleLoopY = 1;
   //movementTrue = true;
 }
 
 function rightArrowPressed(){
   currentX += 5;
-  cycleLoopY = 1;
+  cycleLoopY = 2;
   //movementTrue = true;
 }
 

@@ -29,6 +29,7 @@ var currentY = 60;
 //player animation variables
 const width = 33;
 const height = 32;
-const cycleLoop = [0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 1, 1, 1, 1];
+const cycleLoopX = [0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 1, 1, 1, 1];
+var cycleLoopY = 0;
 var currentLoopIndex = 0;
 var frameCount = 0;
