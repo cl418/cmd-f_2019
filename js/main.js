@@ -42,10 +42,11 @@ player.src = "./assets/char.png";
 
 //fill up the rectangle based on how much stress you have in percentages
 function drawStatsBar(canv, canvWidth, canvHeight, stressLevel, xPos, color) {
+ 
   let level = (stressLevel * canvWidth)/100;
-  
   ctx.fillStyle = color;
   canv.fillRect(xPos, 0, level, canvHeight);
+
 }
 
 //draw one frame of the character
@@ -59,9 +60,16 @@ function draw(frameX, frameY, canvasX, canvasY) {
   ctx.fillStyle = "#ffffc2";
   ctx.fillRect(0, 0, barWidth, barHeight);
 
-  //fill up the stress and progress bars
+  //set up the stress and progress bars
   drawStatsBar(ctx, barWidth/2, barHeight, stress, 0, stressColor);
+  
+  ctx.fillStyle = "#000";
+  ctx.font = "20px Verdana";
+  ctx.fillText("Stress", 5, barHeight-5);
+
   drawStatsBar(ctx, barWidth/2, barHeight, progress, barWidth/2, progressColor);
+  ctx.fillStyle = "#000";
+  ctx.fillText("Progress", barWidth/2+5, barHeight-5);
 
   //other things
   ctx.drawImage(desk, 300, 250);

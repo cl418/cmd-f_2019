@@ -46,6 +46,8 @@ function coding(){
 function talkToMentor() {
   progress += highIncrease;
   stress -= highIncrease;
+  minStressCheck();
+  checkMaxProgress();
 }
 
 function petDog(){
