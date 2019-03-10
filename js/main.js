@@ -14,7 +14,7 @@ var progress = 0;
 var maxProgress = 100;
 
 var currentX = 10;
-var currentY = 10;
+var currentY = 60;
 
 //player animation variables
 const width = 33;
