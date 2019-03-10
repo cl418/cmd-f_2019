@@ -1,6 +1,6 @@
 //STRESS... IS... INCREASING (aka stress related things)
-var smallIncrease = 0.5;
-var mediumIncrease = 1;
+var smallIncrease = 1;
+var mediumIncrease = 2;
 var highIncrease = 3;
 
 function checkMaxStress(){
@@ -20,13 +20,16 @@ function increaseStress(){
   checkMaxStress();
 }
 
+//the three dots emote = (5, 10)
+
 function coding(){
-  stress += mediumIncrease;
+  stress += highIncrease;
+  //progress += smallIncrease;
   progress += smallIncrease;
   drawEmotes = true;
-  //the three dots = (5, 10)
-  emoteIndexX = 5;
-  emoteIndexY = 10;
+  //tangled emote (9, 0)
+  emoteIndexX = 9;
+  emoteIndexY = 0;
   checkMaxStress();
   checkMaxProgress();
   if (win || lose) {
@@ -44,6 +47,15 @@ function checkMaxProgress() {
 function increaseProgress() {
   progress += 1;
   checkMaxProgress();
+}
+
+function groupInteraction() {
+  stress += mediumIncrease;
+  checkMaxStress();
+  drawEmotes = true;
+  //tangled thoughts emote = (9, 0)
+  emoteIndexX = 9;
+  emoteIndexY = 0;
 }
 
 function talkToMentor() {

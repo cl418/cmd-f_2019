@@ -1,24 +1,28 @@
 function leftArrowPressed(){
   currentX -= 5;
   cycleLoopY = 1;
+  console.log("currentX = " + currentX);
   //movementTrue = true;
 }
 
 function rightArrowPressed(){
   currentX += 5;
   cycleLoopY = 2;
+  console.log("currentX = " + currentX);
   //movementTrue = true;
 }
 
 function upArrowPressed(){
   currentY -= 5;
   cycleLoopY = 3;
+  console.log("currentY = " + currentY);
   //movementTrue = true;
 }
 
 function downArrowPressed(){
   currentY += 5;
   cycleLoopY = 0;
+  console.log("currentY = " + currentY);
   //movementTrue = true;
 }
 
@@ -48,9 +52,9 @@ function checkLocation(){
   * 2 = dog
   **/
 
-  //desk
-  if (currentX > 267 && currentX < 332 &&
-      currentY > 216 && currentY < 283) {
+  //your desk
+  if (currentX > 225 && currentX < 280 &&
+      currentY > 250 && currentY < 290) {
     currentX = lastX;
     currentY = lastY;
     objectCode = 1
@@ -64,7 +68,16 @@ function checkLocation(){
     objectCode = 2
   }
 
-  else {
+  //group with a table
+  else if (currentX > 75 && currentX < 170 &&
+      currentY > 250 && currentY < 310) {
+        currentX = lastX;
+        currentY = lastY;
+        objectCode = 3;
+  }
+
+
+ else {
     objectCode = 0;
   }
 }
