@@ -39,6 +39,16 @@ plant.onload = function() {
 };
 plant.src = "./assets/small_plant.png";
 
+var goodFood = new Image();
+goodFood.onload = function () {
+};
+goodFood.src = "./assets/healthy_food.png";
+
+var badFood = new Image();
+badFood.onload = function () {
+};
+badFood.src = "./assets/unhealthy_food.png";
+
 function chooseAction(objectCode){
   if (objectCode == 0) {
     messageCode = 0;
@@ -59,5 +69,13 @@ function chooseAction(objectCode){
     drawEmotes = true;
     emoteIndexX = 5;
     emoteIndexY = 10;
+  }
+  else if (objectCode == 6) {
+    //good food
+
+  }
+  else if (objectCode == 7) {
+    //bad food
+
   }
 }

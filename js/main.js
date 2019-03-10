@@ -64,6 +64,8 @@ $(document).ready(function() {
       ctx.drawImage(plant, 400, 350);
       ctx.drawImage(plant, 50, 100);
       ctx.drawImage(plant, 715, 60);
+      ctx.drawImage(goodFood, 500, 50);
+      ctx.drawImage(badFood, 600, 50);
 
       //draw emotes!
       if(drawEmotes) {
