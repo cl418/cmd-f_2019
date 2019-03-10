@@ -18,8 +18,8 @@ function downArrowPressed(){
   //movementTrue = true;
 }
 
-function checkBorders(){
-  //left
+function checkLocation(){
+  //borders
   if (currentX > 612){
     currentX = 612;
   }
@@ -36,25 +36,51 @@ function checkBorders(){
     console.log(currentY);
     currentY = 50;
   }
+
+  /**
+  * objects so won't run over them
+  * 0 = nothing
+  * 1 = desk
+  * 2 = dog
+  **/
+  var objectCode = 0;
+
+  //desk
+  if (currentX > 267 && currentX < 332 &&
+      currentY > 216 && currentY < 283) {
+    currentX = lastX;
+    currentY = lastY;
+    objectCode = 1
+  }
+
+  //dog
+  if (currentX > 75 && currentX < 140 &&
+      currentY > 20 && currentY < 82) {
+    currentX = lastX;
+    currentY = lastY;
+    objectCode = 2
+  }
+
+  chooseAction(objectCode);
 }
 
 function movePlayer(evt) {
   switch (evt.keyCode) {
       case 37:
       leftArrowPressed();
-      checkBorders();
+      checkLocation();
       break;
       case 39:
       rightArrowPressed();
-      checkBorders();
+      checkLocation();
       break;
       case 38:
       upArrowPressed();
-      checkBorders();
+      checkLocation();
       break;
       case 40:
       downArrowPressed();
-      checkBorders();
+      checkLocation();
       break;
   }
 };

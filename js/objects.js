@@ -10,3 +10,16 @@ dog.onload = function () {
   init();
 };
 dog.src = "./assets/rabbit_normal.png";
+
+function chooseAction(objectCode){
+  if (objectCode == 0) {
+    return;
+  }
+  if (objectCode == 1) {
+    coding();
+  }
+  if (objectCode == 2) {
+    petDog();
+    console.log("much wow");
+  }
+}
