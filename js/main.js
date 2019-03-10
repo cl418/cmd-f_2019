@@ -39,6 +39,7 @@ $(document).ready(function() {
     //other things
     ctx.drawImage(desk, 300, 250);
     ctx.drawImage(dog, 100, 50);
+    ctx.drawImage(group, 100, 250);
 
     //draw emotes!
     if(drawEmotes) {

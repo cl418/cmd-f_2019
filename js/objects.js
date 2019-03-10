@@ -14,6 +14,11 @@ background.onload = function() {
 };
 background.src = "./assets/background.png";
 
+var group = new Image();
+group.onload = function() {
+};
+group.src = "./assets/group.png";
+
 function chooseAction(objectCode){
   if (objectCode == 0) {
     return;
