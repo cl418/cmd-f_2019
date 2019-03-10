@@ -1,8 +1,10 @@
 var canvas = document.getElementById('gameCanvas');
 var ctx = canvas.getContext('2d');
 
+var win = false;
 var fail = false;
-var count = 0;
+var countWin = 0;
+var countLose = 0;
 var objectCode = 0;
 
 var canvasWidth = 750;
@@ -20,7 +22,6 @@ var stressColor = "#ffb266";
 var progress = 0;
 var maxProgress = 100;
 var progressColor = "#66DCFF";
-var win = false;
 
 var lastX;
 var lastY;
