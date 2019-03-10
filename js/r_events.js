@@ -1,6 +1,6 @@
 //GETTING STRESSED?!
 function organizer(){
-  alert("Oh no! An organizer just asked you\nwhat you were doing, but you weren't\n prepared! STRESS += 20%");
+  alert("Oh no! An organizer just asked you\nwhat you were doing, but you had nothing\n to show! STRESS += 20%");
   stress += 20;
 }
 
@@ -11,7 +11,7 @@ function noIdea(){
 
 //DESTRESSING
 function mentor(){
-  alert("Wow, a mentor fixed that bug you were\nworking on for like, three hours\nafter deleting a single line of code???\nSTRESS -= 15%");
+  alert("Wow, a mentor fixed that bug you were\nworking on for three hours\njust by deleting a single line of code??\nSTRESS -= 15%");
   stress -= 15;
 }
 

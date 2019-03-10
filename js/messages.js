@@ -23,13 +23,16 @@ function printMessage() {
     ctx.fillText("You struggled with your project!", buffer, canvasHeight + 20);
   }
   else if (messageCode == 2) {
-    ctx.fillText("Dogs are great", buffer, canvasHeight + 20);
+    ctx.fillText("Dogs are great.", buffer, canvasHeight + 20);
   }
   else if (messageCode == 3) {
     ctx.fillText("They all know what they're doing....", buffer, canvasHeight + 20);
   }
+  else if(messageCode == 4) {
+    ctx.fillText("Huh. They are working.", buffer, canvasHeight + 20);
+  }
   else if (messageCode == 5) {
-    ctx.fillText("What a nice plant", buffer, canvasHeight + 20);
+    ctx.fillText("What a nice plant.", buffer, canvasHeight + 20);
   }
   else if (messageCode == 6) {
     ctx.fillText("The food was great!", buffer, canvasHeight + 20);
