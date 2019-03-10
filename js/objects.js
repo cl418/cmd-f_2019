@@ -44,6 +44,11 @@ badFood.onload = function () {
 };
 badFood.src = "./assets/unhealthy_food.png";
 
+var mentors = new Image();
+mentors.onload = function() {
+};
+mentors.src = "./assets/mentors.png"
+
 function chooseAction(objectCode){
   if (objectCode == 0) {
     messageCode = 0;
@@ -67,7 +72,7 @@ function chooseAction(objectCode){
   }
   else if (objectCode == 6) {
     //good food
-    
+
   }
   else if (objectCode == 7) {
     //bad food
