@@ -2,7 +2,7 @@ var canvas = document.getElementById('gameCanvas');
 var ctx = canvas.getContext('2d');
 
 var win = false;
-var fail = false;
+var lose = false;
 var countWin = 0;
 var countLose = 0;
 var objectCode = 0;
