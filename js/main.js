@@ -60,6 +60,9 @@ $(document).ready(function() {
       ctx.drawImage(single1, 380, 280);
       ctx.drawImage(single2, 480, 280);
       ctx.drawImage(single3, 590, 280);
+      ctx.drawImage(plant, 600, 150);
+      ctx.drawImage(plant, 400, 350);
+      ctx.drawImage(plant, 50, 100);
 
       //draw emotes!
       if(drawEmotes) {
