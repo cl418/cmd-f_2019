@@ -37,8 +37,6 @@ $(document).ready(function() {
     else {
       //background
       ctx.drawImage(background, 0, 0);
-      /*ctx.fillStyle = "#ffefc2";
-      ctx.fillRect(0, 50, canvas.width, canvas.height);*/
 
       //stats "canvas"
       ctx.fillStyle = "#ffefc2";
@@ -60,6 +58,8 @@ $(document).ready(function() {
       ctx.drawImage(dog, 100, 60);
       ctx.drawImage(group, 100, 280);
       ctx.drawImage(single1, 380, 280);
+      ctx.drawImage(single2, 480, 280);
+      ctx.drawImage(single3, 590, 280);
 
       //draw emotes!
       if(drawEmotes) {
@@ -80,7 +80,7 @@ $(document).ready(function() {
       ctx.stroke();
 
       //message
-      //console.log(messageCode);
+      console.log(messageCode);
       printMessage();
     }
 }

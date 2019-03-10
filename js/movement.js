@@ -1,25 +1,25 @@
 function leftArrowPressed(){
   currentX -= 5;
   cycleLoopY = 1;
-  //console.log("currentX = " + currentX);
+  console.log("currentX = " + currentX);
 }
 
 function rightArrowPressed(){
   currentX += 5;
   cycleLoopY = 2;
-  //console.log("currentX = " + currentX);
+  console.log("currentX = " + currentX);
 }
 
 function upArrowPressed(){
   currentY -= 5;
   cycleLoopY = 3;
-  //console.log("currentY = " + currentY);
+  console.log("currentY = " + currentY);
 }
 
 function downArrowPressed(){
   currentY += 5;
   cycleLoopY = 0;
-  //console.log("currentY = " + currentY);
+  console.log("currentY = " + currentY);
 }
 
 function checkLocation(){
@@ -72,10 +72,11 @@ function checkLocation(){
       objectCode = 3;
   }
 
-  else if (currentY > 250 && currentY < 320 && (
-    (currentX > 335 && currentX < 390) ||
+  //single sitting people - literally do nothing
+  else if (currentY > 250 && currentY < 310 && (
+    (currentX > 360 && currentX < 410) ||
     (currentX > 455 && currentX < 510) ||
-    (currentX > 576 && currentX < 633) )) {
+    (currentX > 560 && currentX < 615) )) {
     currentX = lastX;
     currentY = lastY;
     objectCode = 4;

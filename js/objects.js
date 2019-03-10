@@ -50,4 +50,9 @@ function chooseAction(objectCode){
     messageCode = 3;
     groupInteraction();
   }
+  else if(objectCode == 4) {
+    drawEmotes = true;
+    emoteIndexX = 5;
+    emoteIndexY = 10;
+  }
 }
