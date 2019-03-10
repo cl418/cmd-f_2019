@@ -10,7 +10,7 @@ var stress = 0;
 var maxStress = 100;
 
 var progress = 0;
-var maxProgress = 0;
+var maxProgress = 100;
 
 var currentX = 10;
 var currentY = 10;
@@ -26,14 +26,14 @@ var currentY = 10;
   //player animation variables
   const width = 33;
   const height = 32;
-  const cycleLoop = [0, 1, 2, 1];
+  const cycleLoop = [0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 1, 1, 1, 1];
   var currentLoopIndex = 0;
   var frameCount = 0;
 
   //draw one frame of the character
   function drawFrame(frameX, frameY, canvasX, canvasY) {
     ctx.drawImage(player,
-    frameX * width, frameY * height, 
+    frameX * width, frameY * height,
     width, height,
     canvasX, canvasY,
     width, height);
@@ -43,13 +43,13 @@ var currentY = 10;
   function step() {
     //to slow down the character
     frameCount++;
-    if(frameCount < 15) { 
+    if(frameCount < 2) {
       window.requestAnimationFrame(step);
       return;
     }
     frameCount = 0;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
+
     //draw the character frame
     drawFrame(cycleLoop[currentLoopIndex], 0, currentX, currentY);
     currentLoopIndex++;
