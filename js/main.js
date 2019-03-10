@@ -15,114 +15,136 @@ $(document).ready(function() {
   }
   //draw one frame of the character
   function draw(frameX, frameY, canvasX, canvasY) {
+    //introduction
+    if (intro) {
+      ctx.fillStyle = "black";
+      ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+      ctx.fillStyle = stressColor;
+      ctx.font = "40px pixelFont";
+      ctx.fillText("Hackathon Survival Guide", 75, 100);
+      ctx.font = "20px pixelFont";
+      ctx.fillText("Try to stay calm and complete your hackathon!", 75, 150);
+      ctx.fillText("Use the arrows keys to move and press X to interact", 75, 180);
+      ctx.fillText("Certain items will increase/decrease your stress levels", 75, 210);
+      ctx.fillText("Be careful: if you get too stressed, you'll lose for sure!", 75, 240);
+      ctx.fillText("(Click to continue!)", 75, 270);
 
-    //background
-    ctx.drawImage(background, 0, 0);
-    /*ctx.fillStyle = "#ffefc2";
-    ctx.fillRect(0, 50, canvas.width, canvas.height);*/
-
-    //stats "canvas"
-    ctx.fillStyle = "#ffefc2";
-    ctx.fillRect(0, 0, barWidth, barHeight);
-
-    //set up the stress and progress bars
-    drawStatsBar(ctx, barWidth/2, barHeight, stress, 0, stressColor);
-
-    ctx.fillStyle = "#000";
-    ctx.font = "40px pixelFont";
-    ctx.fillText("Stress", 5, barHeight-5);
-
-    drawStatsBar(ctx, barWidth/2, barHeight, progress, barWidth/2, progressColor);
-    ctx.fillStyle = "#000";
-    ctx.fillText("Progress", barWidth/2+5, barHeight-5);
-
-    //other things
-    ctx.drawImage(desk, 250, 280);
-    ctx.drawImage(dog, 100, 60);
-    ctx.drawImage(group, 100, 280);
-    ctx.drawImage(single1, 380, 280);
-
-    //draw emotes!
-    if(drawEmotes) {
-      ctx.drawImage(emotes, emoteIndexX*16, emoteIndexY*16, 16, 16, currentX-17, currentY, 16, 16);
-      emoteCount++;
+      $(document).click(function(){
+        intro = false;
+      });
     }
 
-    //player
-    ctx.drawImage(player,
-    frameX * width, frameY * height,
-    width, height,
-    canvasX, canvasY,
-    width, height);
+    else {
+      //background
+      ctx.drawImage(background, 0, 0);
+      /*ctx.fillStyle = "#ffefc2";
+      ctx.fillRect(0, 50, canvas.width, canvas.height);*/
+
+      //stats "canvas"
+      ctx.fillStyle = "#ffefc2";
+      ctx.fillRect(0, 0, barWidth, barHeight);
+
+      //set up the stress and progress bars
+      drawStatsBar(ctx, barWidth/2, barHeight, stress, 0, stressColor);
+
+      ctx.fillStyle = "#000";
+      ctx.font = "40px pixelFont";
+      ctx.fillText("Stress", 5, barHeight-5);
+
+      drawStatsBar(ctx, barWidth/2, barHeight, progress, barWidth/2, progressColor);
+      ctx.fillStyle = "#000";
+      ctx.fillText("Progress", barWidth/2+5, barHeight-5);
+
+      //other things
+      ctx.drawImage(desk, 250, 280);
+      ctx.drawImage(dog, 100, 60);
+      ctx.drawImage(group, 100, 280);
+      ctx.drawImage(single1, 380, 280);
+
+      //draw emotes!
+      if(drawEmotes) {
+        ctx.drawImage(emotes, emoteIndexX*16, emoteIndexY*16, 16, 16, currentX-17, currentY, 16, 16);
+        emoteCount++;
+      }
+
+      //player
+      ctx.drawImage(player,
+      frameX * width, frameY * height,
+      width, height,
+      canvasX, canvasY,
+      width, height);
+
+    }
 }
 
   //one step of animation
   function update() {
-    //if (!fail) {
-      //to slow down the character
-      frameCount++;
-      if(frameCount < 2) {
-        window.requestAnimationFrame(update);
-        return;
-      }
-      frameCount = 0;
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    //to slow down the character
+    frameCount++;
+    if(frameCount < 2) {
+      window.requestAnimationFrame(update);
+      return;
+    }
+    frameCount = 0;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      //draw the character frame
-      draw(cycleLoopX[currentLoopIndex], cycleLoopY, currentX, currentY);
-      lastX = currentX;
-      lastY = currentY;
-      currentLoopIndex++;
-      if (currentLoopIndex >= cycleLoopX.length) {
-        currentLoopIndex = 0;
-      }
+    //draw the character frame
+    draw(cycleLoopX[currentLoopIndex], cycleLoopY, currentX, currentY);
+    lastX = currentX;
+    lastY = currentY;
+    currentLoopIndex++;
+    if (currentLoopIndex >= cycleLoopX.length) {
+      currentLoopIndex = 0;
+    }
 
 
-      //other functions that require requestAnimationFrame need to go here
-      //there should only be one requestAnimationFrame
+    //other functions that require requestAnimationFrame need to go here
+    //there should only be one requestAnimationFrame
+    if (!intro) {    
       increaseStress();
 
       var num = Math.floor((Math.random() * 5000) + 1);
       if (num == 1) {
         chooseEvent();
       }
+    }
 
-      //if you won
-      if (win) {
+    //if you won
+    if (win) {
+      ctx.fillStyle = "black";
+      ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+      ctx.globalAlpha += 0.1;
+      countWin++;
+      console.log(ctx.globalAlpha);
+      if (countWin > 18) {
         ctx.fillStyle = progressColor;
-        ctx.fillRect(0, 0, 750, 570);
-        ctx.globalAlpha += 0.1;
-        countWin++;
-        console.log(ctx.globalAlpha);
-        if (countWin > 18) {
-          ctx.fillStyle = stressColor;
-          ctx.font = "80px pixelFont"
-          ctx.fillText("YOU WIN", 250, 200);
-          return;
-        }
+        ctx.font = "80px pixelFont"
+        ctx.fillText("YOU WIN", 250, 200);
+        return;
       }
+    }
 
-      //if you lost
-      if (lose) {
-        ctx.fillStyle = "black"
-        ctx.fillRect(0, 0, 750, 570);
-        ctx.globalAlpha += 0.1;
-        countLose++;
-        if (countLose > 18) {
-          ctx.fillStyle = "white";
-          ctx.font = "80px pixelFont"
-          ctx.fillText("YOU LOSE", 250, 200);
-          return;
-        }
+    //if you lost
+    if (lose) {
+      ctx.fillStyle = "black"
+      ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+      ctx.globalAlpha += 0.1;
+      countLose++;
+      if (countLose > 18) {
+        ctx.fillStyle = "white";
+        ctx.font = "80px pixelFont"
+        ctx.fillText("YOU LOSE", 250, 200);
+        return;
       }
+    }
 
-      window.requestAnimationFrame(update);
-      //quick fix of emotes blanking out
-      if(emoteCount >= 40) {
-        drawEmotes = false;
-        emoteCount = 0;
-      }
+    //quick fix of emotes blanking out
+    if(emoteCount >= 40) {
+      drawEmotes = false;
+      emoteCount = 0;
+    }
 
+    window.requestAnimationFrame(update);
   }
 
   //actual animation
