@@ -28,7 +28,7 @@ $(document).ready(function() {
     drawStatsBar(ctx, barWidth/2, barHeight, stress, 0, stressColor);
 
     ctx.fillStyle = "#000";
-    ctx.font = "20px Verdana";
+    ctx.font = "40px pixelFont";
     ctx.fillText("Stress", 5, barHeight-5);
 
     drawStatsBar(ctx, barWidth/2, barHeight, progress, barWidth/2, progressColor);
@@ -79,7 +79,10 @@ $(document).ready(function() {
         ctx.globalAlpha += 0.1;
         count++;
         console.log(ctx.globalAlpha);
-        if (count > 25) {
+        if (count > 18) {
+          ctx.fillStyle = "white";
+          ctx.font = "80px pixelFont"
+          ctx.fillText("YOU LOSE", 200, 200);
           return;
         }
       }
