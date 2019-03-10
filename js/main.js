@@ -16,12 +16,13 @@ $(document).ready(function() {
   //draw one frame of the character
   function draw(frameX, frameY, canvasX, canvasY) {
 
-    //character animation
-    ctx.fillStyle = "#ffefc2";
-    ctx.fillRect(0, 50, canvas.width, canvas.height);
+    //background
+    ctx.drawImage(background, 0, 0);
+    /*ctx.fillStyle = "#ffefc2";
+    ctx.fillRect(0, 50, canvas.width, canvas.height);*/
 
     //stats "canvas"
-    ctx.fillStyle = "#ffffc2";
+    ctx.fillStyle = "#ffefc2";
     ctx.fillRect(0, 0, barWidth, barHeight);
 
     //set up the stress and progress bars
@@ -38,6 +39,12 @@ $(document).ready(function() {
     //other things
     ctx.drawImage(desk, 300, 250);
     ctx.drawImage(dog, 100, 50);
+
+    //draw emotes!
+    if(drawEmotes) {
+      ctx.drawImage(emotes, emoteIndexX*16, emoteIndexY*16, 16, 16, currentX-17, currentY, 16, 16);
+      emoteCount++;
+    }
 
     //player
     ctx.drawImage(player,
@@ -60,13 +67,14 @@ $(document).ready(function() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       //draw the character frame
-      draw(cycleLoop[currentLoopIndex], 0, currentX, currentY);
+      draw(cycleLoopX[currentLoopIndex], cycleLoopY, currentX, currentY);
       lastX = currentX;
       lastY = currentY;
       currentLoopIndex++;
-      if (currentLoopIndex >= cycleLoop.length) {
+      if (currentLoopIndex >= cycleLoopX.length) {
         currentLoopIndex = 0;
       }
+
 
       //other functions that require requestAnimationFrame need to go here
       //there should only be one requestAnimationFrame
@@ -91,8 +99,14 @@ $(document).ready(function() {
           return;
         }
       }
-
+        
       window.requestAnimationFrame(update);
+      //quick fix of emotes blanking out
+      if(emoteCount >= 40) {
+        drawEmotes = false;
+        emoteCount = 0;
+      }
+      
   }
 
   //actual animation

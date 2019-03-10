@@ -9,6 +9,11 @@ dog.onload = function () {
 };
 dog.src = "./assets/rabbit_normal.png";
 
+var background = new Image();
+background.onload = function() {
+};
+background.src = "./assets/background.png";
+
 function chooseAction(objectCode){
   if (objectCode == 0) {
     return;

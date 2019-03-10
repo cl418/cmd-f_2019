@@ -6,7 +6,7 @@ var count = 0;
 var objectCode = 0;
 
 var canvasWidth = 750;
-var canvasHeight = 570;
+var canvasHeight = 400;
 
 var barWidth = canvasWidth;
 var barHeight = 50;
@@ -30,6 +30,15 @@ var currentY = 60;
 //player animation variables
 const width = 33;
 const height = 32;
-const cycleLoop = [0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 1, 1, 1, 1];
+const cycleLoopX = [0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 1, 1, 1, 1];
+var cycleLoopY = 0;
 var currentLoopIndex = 0;
 var frameCount = 0;
+
+//EMOTES
+var emotes = new Image();
+emotes.src = "./assets/emotes.png"
+var emoteIndexX = 0;
+var emoteIndexY = 0;
+var emoteCount = 0;
+var drawEmotes = false;
