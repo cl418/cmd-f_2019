@@ -1,4 +1,4 @@
-$(document).ready(function(){
+/*$(document).ready(function(){
 
   var canvas = document.getElementById('myCanvas');
   var ctx = canvas.getContext('2d');
@@ -18,4 +18,6 @@ $(document).ready(function(){
   }
   player.src = "/../assets/alienPink_badge1.png";
 
-});
+  function
+
+});*/
