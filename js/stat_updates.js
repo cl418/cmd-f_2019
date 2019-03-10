@@ -24,13 +24,11 @@ function increaseStress(){
 
 function coding(){
   stress += highIncrease;
-  //progress += smallIncrease;
   progress += smallIncrease;
   drawEmotes = true;
   //tangled emote (9, 0)
   emoteIndexX = 9;
   emoteIndexY = 0;
-  //messageCode = 1;
   checkMaxStress();
   checkMaxProgress();
   if (win || lose) {
@@ -42,7 +40,6 @@ function groupInteraction() {
   stress += mediumIncrease;
   checkMaxStress();
   drawEmotes = true;
-  //messageCode = 3;
   //tangled thoughts emote = (9, 0)
   emoteIndexX = 9;
   emoteIndexY = 0;

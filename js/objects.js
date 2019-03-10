@@ -47,7 +47,6 @@ function chooseAction(objectCode){
     petDog();
   }
   else if(objectCode == 3) {
-    console.log("INTERACTION WITH GROUP");
     messageCode = 3;
     groupInteraction();
   }
