@@ -6,7 +6,9 @@ var win = false;
 var lose = false;
 var countWin = 0;
 var countLose = 0;
+
 var objectCode = 0;
+var messageCode = 0;
 
 var canvasWidth = 750;
 var canvasHeight = 400;

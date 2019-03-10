@@ -74,6 +74,9 @@ $(document).ready(function() {
       canvasX, canvasY,
       width, height);
 
+      //message
+      //console.log(messageCode);
+      printMessage();
     }
 }
 
@@ -121,7 +124,7 @@ $(document).ready(function() {
         ctx.font = "80px pixelFont"
         ctx.fillText("YOU WIN", 250, 200);
         ctx.font = "20px pixelFont";
-        ctx.fillText("All your hard work has paid off; you won the hackathon!!!", 145, 210);
+        ctx.fillText("All your hard work has paid off; you won the hackathon!!!", 145, 215);
         return;
       }
     }

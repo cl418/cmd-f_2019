@@ -1,29 +1,25 @@
 function leftArrowPressed(){
   currentX -= 5;
   cycleLoopY = 1;
-  console.log("currentX = " + currentX);
-  //movementTrue = true;
+  //console.log("currentX = " + currentX);
 }
 
 function rightArrowPressed(){
   currentX += 5;
   cycleLoopY = 2;
-  console.log("currentX = " + currentX);
-  //movementTrue = true;
+  //console.log("currentX = " + currentX);
 }
 
 function upArrowPressed(){
   currentY -= 5;
   cycleLoopY = 3;
-  console.log("currentY = " + currentY);
-  //movementTrue = true;
+  //console.log("currentY = " + currentY);
 }
 
 function downArrowPressed(){
   currentY += 5;
   cycleLoopY = 0;
-  console.log("currentY = " + currentY);
-  //movementTrue = true;
+  //console.log("currentY = " + currentY);
 }
 
 function checkLocation(){
@@ -41,11 +37,8 @@ function checkLocation(){
   }
   //top
   if (currentY < 50){
-    console.log(currentY);
     currentY = 50;
   }
-
-
 
   /**
   * objects so won't run over them
@@ -57,41 +50,44 @@ function checkLocation(){
   //your desk
   if (currentX > 225 && currentX < 280 &&
       currentY > 250 && currentY < 290) {
-    currentX = lastX;
-    currentY = lastY;
-    objectCode = 1
+      currentX = lastX;
+      currentY = lastY;
+      objectCode = 1
   }
 
   //dog
   else if (currentX > 75 && currentX < 140 &&
       currentY > 20 && currentY < 82) {
-    currentX = lastX;
-    currentY = lastY;
-    objectCode = 2
+      currentX = lastX;
+      currentY = lastY;
+      objectCode = 2
+      console.log(messageCode);
   }
 
   //group with a table
   else if (currentX > 75 && currentX < 170 &&
       currentY > 250 && currentY < 310) {
-        currentX = lastX;
-        currentY = lastY;
-        objectCode = 3;
+      currentX = lastX;
+      currentY = lastY;
+      objectCode = 3;
   }
 
   else if (currentY > 250 && currentY < 320 && (
     (currentX > 335 && currentX < 390) ||
     (currentX > 455 && currentX < 510) ||
-    (currentX > 576 && currentX < 633)
-  )) {
+    (currentX > 576 && currentX < 633) )) {
     currentX = lastX;
     currentY = lastY;
     objectCode = 4;
-    
+
   }
 
  else {
     objectCode = 0;
   }
+
+  console.log(objectCode);
+  //console.log(messageCode);
 }
 
 function movePlayer(evt) {
@@ -99,27 +95,29 @@ function movePlayer(evt) {
       case 37:
       leftArrowPressed();
       checkLocation();
+      messageCode = 0;
       break;
       case 39:
       rightArrowPressed();
       checkLocation();
+      messageCode = 0;
       break;
       case 38:
       upArrowPressed();
       checkLocation();
+      messageCode = 0;
       break;
       case 40:
       downArrowPressed();
       checkLocation();
+      messageCode = 0;
       break;
       case 88:
+      ctx.fillStyle = "black";
+      ctx.font = "25px pixelFont";
       chooseAction(objectCode);
       break;
   }
 };
 
 document.addEventListener("keydown", movePlayer);
-
-function playerPosUpdate(){
-  movePlayer(evt);
-}
