@@ -35,11 +35,6 @@ player.src = "./assets/char.png";
 
 //draw one frame of the character
 function draw(frameX, frameY, canvasX, canvasY) {
-  //draw other things
-  ctx.fillStyle = "#ffefc2";
-  ctx.fillRect(0,0,canvas.width, canvas.height);
-  ctx.drawImage(desk, 300, 250);
-  ctx.drawImage(dog, 100, 50);
 
   //character animation
   ctx.fillStyle = "#ffefc2";
@@ -49,6 +44,11 @@ function draw(frameX, frameY, canvasX, canvasY) {
   ctx.fillStyle = "#ffffc2";
   ctx.fillRect(0, 0, 660, 50);
 
+  //other things
+  ctx.drawImage(desk, 300, 250);
+  ctx.drawImage(dog, 100, 50);
+
+  //player
   ctx.drawImage(player,
   frameX * width, frameY * height,
   width, height,
