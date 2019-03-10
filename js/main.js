@@ -80,6 +80,11 @@ $(document).ready(function() {
       //there should only be one requestAnimationFrame
       increaseStress();
 
+      var num = Math.floor((Math.random() * 1000) + 1);
+      if (num == 1) {
+        chooseEvent();
+      }
+
       //if you lost
       if (fail) {
         ctx.fillStyle = "black"
