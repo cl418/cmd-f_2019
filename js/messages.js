@@ -8,6 +8,7 @@
 * 5 = plants
 * 6 = goodFood
 * 7 = badFood
+* 8 = mentors
 **/
 
 var buffer = 5;
@@ -35,5 +36,8 @@ function printMessage() {
   }
   else if (messageCode == 7) {
     ctx.fillText("I.... don't feel so good.", buffer, canvasHeight + 20);
+  }
+  else if (messageCode == 8) {
+    ctx.fillText("Wow, the mentors are so helpful!", buffer, canvasHeight + 20);
   }
 }

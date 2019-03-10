@@ -79,13 +79,15 @@ function chooseAction(objectCode){
     messageCode = 5;
   }
   else if (objectCode == 6) {
-    //good food
     messageCode = 6
     eatHealthy();
   }
   else if (objectCode == 7) {
-    //bad food
     messageCode = 7;
     eatBadly();
+  }
+  else if (objectCode == 8) {
+    messageCode = 8;
+    talkToMentor();
   }
 }

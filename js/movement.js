@@ -95,18 +95,28 @@ function checkLocation(){
     objectCode = 5;
   }
 
-  else if (currentX > 480 && currentX < 585
-      && currentY > 45 && currentY < 95) {
-      currentX = lastX;
-      currentY = lastY;
-      objectCode = 6;
+  //good food
+  else if (currentX > 480 && currentX < 585 &&
+           currentY > 45 && currentY < 95) {
+    currentX = lastX;
+    currentY = lastY;
+    objectCode = 6;
    }
 
+  //bad food
   else if(currentX > 585 && currentX < 700 &&
-      currentY > 45 && currentY < 95) {
-        currentX = lastX;
-        currentY = lastY;
-        objectCode = 7;
+          currentY > 45 && currentY < 95) {
+    currentX = lastX;
+    currentY = lastY;
+    objectCode = 7;
+  }
+
+  //mentor table
+  else if ((currentX > 218 && currentX < 336) &&
+           (currentY > 98 && currentY < 195)) {
+    currentX = lastX;
+    currentY = lastY;
+    objectCode = 8;
   }
 
  else {

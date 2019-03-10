@@ -20,6 +20,11 @@ function increaseStress(){
   checkMaxStress();
 }
 
+function eatBadly(){
+  stress += mediumIncrease;
+  checkMaxStress();
+}
+
 //the three dots emote = (5, 10)
 
 function coding(){
@@ -45,11 +50,6 @@ function groupInteraction() {
   emoteIndexY = 0;
 }
 
-function eatBadly(){
-  stress += mediumIncrease;
-  checkMaxStress();
-}
-
 //STRESS IS DECREASING?? WOW (aka progress related things)
 function checkMaxProgress() {
   if (progress >= maxProgress) {
@@ -59,13 +59,6 @@ function checkMaxProgress() {
 
 function increaseProgress() {
   progress += 1;
-  checkMaxProgress();
-}
-
-function talkToMentor() {
-  progress += highIncrease;
-  stress -= highIncrease;
-  minStressCheck();
   checkMaxProgress();
 }
 
@@ -83,8 +76,17 @@ function eatHealthy(){
   stress -= mediumIncrease;
   minStressCheck();
 }
-//NONE OF THESE WERE ACTUALLY USED
-/*function drinkWater(){
+
+function talkToMentor() {
+  progress += highIncrease;
+  stress -= highIncrease;
+  minStressCheck();
+  checkMaxProgress();
+}
+
+//WE DIDNT USE THESE
+/*
+function drinkWater(){
   stress -= mediumIncrease;
   minStressCheck();
 }
