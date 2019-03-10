@@ -49,6 +49,11 @@ badFood.onload = function () {
 };
 badFood.src = "./assets/unhealthy_food.png";
 
+var mentors = new Image();
+mentors.onload = function() {
+};
+mentors.src = "./assets/mentors.png"
+
 function chooseAction(objectCode){
   if (objectCode == 0) {
     messageCode = 0;
