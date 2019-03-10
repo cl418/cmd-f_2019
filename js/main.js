@@ -51,7 +51,7 @@ var currentY = 10;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     
     //draw the character frame
-    drawFrame(cycleLoop[currentLoopIndex], 0, 0, 0);
+    drawFrame(cycleLoop[currentLoopIndex], 0, currentX, currentY);
     currentLoopIndex++;
     if (currentLoopIndex >= cycleLoop.length) {
       currentLoopIndex = 0;
