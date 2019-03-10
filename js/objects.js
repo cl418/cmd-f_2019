@@ -36,32 +36,18 @@ single3.src = "./assets/single3.png";
 
 function chooseAction(objectCode){
   if (objectCode == 0) {
-    return;
+    messageCode = 0;
   }
-  if (objectCode == 1) {
+  else if (objectCode == 1) {
+    messageCode = 1;
     coding();
   }
-  if (objectCode == 2) {
+  else if (objectCode == 2) {
+    messageCode = 2;
     petDog();
   }
-  if(objectCode == 3) {
+  else if(objectCode == 3) {
+    messageCode = 3;
     groupInteraction();
   }
-  if(objectCode == 4) {
-    //indifferent - dont do anything
-  }
-}
-
-function interact(evt) {
-  switch (evt.keyCode) {
-      case 88:
-      chooseAction(objectCode);
-      break;
-  }
-};
-
-document.addEventListener("keypress", interact);
-
-function interactUpdate(){
-  interact(evt);
 }

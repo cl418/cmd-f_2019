@@ -29,7 +29,7 @@ $(document).ready(function() {
       ctx.fillText("Be careful: if you get too stressed, you'll lose for sure!", 75, 240);
       ctx.fillText("(Click to continue!)", 75, 270);
 
-      $(document).click(function(){
+      $("#gameCanvas").click(function(){
         intro = false;
       });
     }
@@ -76,6 +76,9 @@ $(document).ready(function() {
       canvasX, canvasY,
       width, height);
 
+      //message
+      //console.log(messageCode);
+      printMessage();
     }
 }
 
@@ -102,7 +105,7 @@ $(document).ready(function() {
 
     //other functions that require requestAnimationFrame need to go here
     //there should only be one requestAnimationFrame
-    if (!intro) {    
+    if (!intro) {
       increaseStress();
 
       var num = Math.floor((Math.random() * 5000) + 1);
@@ -122,6 +125,8 @@ $(document).ready(function() {
         ctx.fillStyle = progressColor;
         ctx.font = "80px pixelFont"
         ctx.fillText("YOU WIN", 250, 200);
+        ctx.font = "20px pixelFont";
+        ctx.fillText("All your hard work has paid off; you won the hackathon!!!", 145, 215);
         return;
       }
     }
@@ -134,8 +139,10 @@ $(document).ready(function() {
       countLose++;
       if (countLose > 18) {
         ctx.fillStyle = "white";
-        ctx.font = "80px pixelFont"
-        ctx.fillText("YOU LOSE", 250, 200);
+        ctx.font = "80px pixelFont";
+        ctx.fillText("YOU LOSE", 250, 180);
+        ctx.font = "20px pixelFont";
+        ctx.fillText("Looks like you've lost this hackathon. Better luck next time!", 140, 210);
         return;
       }
     }
