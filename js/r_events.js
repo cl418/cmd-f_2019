@@ -11,7 +11,7 @@ function noIdea(){
 
 //DESTRESSING
 function mentor(){
-  alert("Wow, a mentor fixed that bug you were\nworking on for like, three hourse\nafter deleting a single line of code???\nSTRESS -= 15%");
+  alert("Wow, a mentor fixed that bug you were\nworking on for like, three hours\nafter deleting a single line of code???\nSTRESS -= 15%");
   stress -= 15;
 }
 

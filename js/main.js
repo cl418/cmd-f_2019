@@ -18,7 +18,7 @@ $(document).ready(function() {
     //introduction
     if (intro) {
       ctx.fillStyle = "black";
-      ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+      ctx.fillRect(0, 0, canvasWidth, canvasHeight + 35);
       ctx.fillStyle = stressColor;
       ctx.font = "40px pixelFont";
       ctx.fillText("Hackathon Survival Guide", 75, 100);
@@ -60,6 +60,10 @@ $(document).ready(function() {
       ctx.drawImage(single1, 380, 280);
       ctx.drawImage(single2, 480, 280);
       ctx.drawImage(single3, 590, 280);
+      ctx.drawImage(plant, 600, 150);
+      ctx.drawImage(plant, 400, 350);
+      ctx.drawImage(plant, 50, 100);
+      ctx.drawImage(plant, 720,85);
       ctx.drawImage(goodFood, 500, 50);
       ctx.drawImage(badFood, 600, 50);
       ctx.drawImage(mentors, 240, 120);
@@ -78,8 +82,8 @@ $(document).ready(function() {
       width, height);
 
       //message bar
-      ctx.fillstyle = "black";
-      ctx.fillRect(0, canvasHeight - 50, canvasWidth, canvasHeight - 50);
+      ctx.fillStyle = "#ffefc2";
+      ctx.fillRect(0, canvasHeight - 20, canvasWidth, 75);
       ctx.stroke();
 
       //message
@@ -123,16 +127,15 @@ $(document).ready(function() {
     //if you won
     if (win) {
       ctx.fillStyle = "black";
-      ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+      ctx.fillRect(0, 0, canvasWidth, canvasHeight + 35);
       ctx.globalAlpha += 0.1;
       countWin++;
-      console.log(ctx.globalAlpha);
       if (countWin > 18) {
         ctx.fillStyle = progressColor;
         ctx.font = "80px pixelFont"
-        ctx.fillText("YOU WIN", 250, 200);
+        ctx.fillText("YOU WIN", 250, 210);
         ctx.font = "20px pixelFont";
-        ctx.fillText("All your hard work has paid off; you won the hackathon!!!", 145, 215);
+        ctx.fillText("All your hard work has paid off; you won the hackathon!!!", 145, 225);
         return;
       }
     }
@@ -140,15 +143,15 @@ $(document).ready(function() {
     //if you lost
     if (lose) {
       ctx.fillStyle = "black"
-      ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+      ctx.fillRect(0, 0, canvasWidth, canvasHeight + 35);
       ctx.globalAlpha += 0.1;
       countLose++;
       if (countLose > 18) {
         ctx.fillStyle = "white";
         ctx.font = "80px pixelFont";
-        ctx.fillText("YOU LOSE", 250, 180);
+        ctx.fillText("YOU LOSE", 250, 190);
         ctx.font = "20px pixelFont";
-        ctx.fillText("Looks like you've lost this hackathon. Better luck next time!", 140, 210);
+        ctx.fillText("Looks like you've lost this hackathon. Better luck next time!", 140, 220);
         return;
       }
     }

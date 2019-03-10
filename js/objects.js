@@ -34,6 +34,11 @@ single3.onload = function() {
   };
 single3.src = "./assets/single3.png";
 
+var plant = new Image();
+plant.onload = function() {
+};
+plant.src = "./assets/small_plant.png";
+
 var goodFood = new Image();
 goodFood.onload = function () {
 };
@@ -70,12 +75,19 @@ function chooseAction(objectCode){
     emoteIndexX = 5;
     emoteIndexY = 10;
   }
+  else if (objectCode == 5) {
+    messageCode = 5;
+  }
   else if (objectCode == 6) {
-    //good food
-
+    messageCode = 6
+    eatHealthy();
   }
   else if (objectCode == 7) {
-    //bad food
-
+    messageCode = 7;
+    eatBadly();
+  }
+  else if (objectCode == 8) {
+    messageCode = 8;
+    talkToMentor();
   }
 }

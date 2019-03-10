@@ -32,8 +32,8 @@ function checkLocation(){
     currentX = 0;
   }
   //bottom
-  if (currentY > 318){
-    currentY = 318;
+  if (currentY > 345){
+    currentY = 345;
   }
   //top
   if (currentY < 50){
@@ -45,6 +45,9 @@ function checkLocation(){
   * 0 = nothing
   * 1 = desk
   * 2 = dog
+  * 3 = group w table
+  * 4 = single peoples
+  * 5 = plant
   **/
 
   //your desk
@@ -80,21 +83,40 @@ function checkLocation(){
     currentX = lastX;
     currentY = lastY;
     objectCode = 4;
-
   }
 
-  else if (currentX > 480 && currentX < 585 
-      && currentY > 45 && currentY < 95) {
-      currentX = lastX;
-      currentY = lastY;
-      objectCode = 6; 
+  //plants
+  else if ((currentX > 570 && currentX < 615 && currentY > 118 && currentY < 170) ||
+           (currentX > 370 && currentX < 415 && currentY > 318 && currentY < 370) ||
+           (currentX > 20 && currentX < 65 && currentY > 68 && currentY < 120) ||
+           (currentX > 690 && currentX < 735 && currentY > 48 && currentY < 100)) {
+    currentX = lastX;
+    currentY = lastY;
+    objectCode = 5;
+  }
+
+  //good food
+  else if (currentX > 480 && currentX < 585 &&
+           currentY > 45 && currentY < 95) {
+    currentX = lastX;
+    currentY = lastY;
+    objectCode = 6;
    }
 
+  //bad food
   else if(currentX > 585 && currentX < 700 &&
-      currentY > 45 && currentY < 95) {
-        currentX = lastX;
-        currentY = lastY;
-        objectCode = 7; 
+          currentY > 45 && currentY < 95) {
+    currentX = lastX;
+    currentY = lastY;
+    objectCode = 7;
+  }
+
+  //mentor table
+  else if ((currentX > 218 && currentX < 336) &&
+           (currentY > 98 && currentY < 195)) {
+    currentX = lastX;
+    currentY = lastY;
+    objectCode = 8;
   }
 
  else {

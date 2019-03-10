@@ -20,6 +20,11 @@ function increaseStress(){
   checkMaxStress();
 }
 
+function eatBadly(){
+  stress += mediumIncrease;
+  checkMaxStress();
+}
+
 //the three dots emote = (5, 10)
 
 function coding(){
@@ -57,13 +62,6 @@ function increaseProgress() {
   checkMaxProgress();
 }
 
-function talkToMentor() {
-  progress += highIncrease;
-  stress -= highIncrease;
-  minStressCheck();
-  checkMaxProgress();
-}
-
 function petDog(){
   stress -= highIncrease;
   drawEmotes = true;
@@ -74,6 +72,20 @@ function petDog(){
   minStressCheck();
 }
 
+function eatHealthy(){
+  stress -= mediumIncrease;
+  minStressCheck();
+}
+
+function talkToMentor() {
+  progress += highIncrease;
+  stress -= highIncrease;
+  minStressCheck();
+  checkMaxProgress();
+}
+
+//WE DIDNT USE THESE
+/*
 function drinkWater(){
   stress -= mediumIncrease;
   minStressCheck();
@@ -87,4 +99,4 @@ function meditate(){
 function takeAHike(){
   stress -= highIncrease;
   minStressCheck();
-}
+}*/
