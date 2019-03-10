@@ -1,17 +1,21 @@
 function leftArrowPressed(){
   currentX -= 5;
+  //movementTrue = true;
 }
 
 function rightArrowPressed(){
   currentX += 5;
+  //movementTrue = true;
 }
 
 function upArrowPressed(){
   currentY -= 5;
+  //movementTrue = true;
 }
 
 function downArrowPressed(){
   currentY += 5;
+  //movementTrue = true;
 }
 
 function checkBorders(){

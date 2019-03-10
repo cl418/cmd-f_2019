@@ -15,52 +15,58 @@ var maxProgress = 100;
 var currentX = 10;
 var currentY = 10;
 
-  var player = new Image();
-  player.onload = function () {
-    init();
-    //ctx.drawImage(player, 200, 200);
-  };
-  player.src = "./assets/char.png";
+//player animation variables
+const width = 33;
+const height = 32;
+const cycleLoop = [0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 1, 1, 1, 1];
+var currentLoopIndex = 0;
+var frameCount = 0;
+
+//var movementTrue = false;
+
+var player = new Image();
+player.onload = function () {
+  init();
   //ctx.drawImage(player, 200, 200);
+};
+player.src = "./assets/char.png";
+//ctx.drawImage(player, 200, 200);
 
-  //player animation variables
-  const width = 33;
-  const height = 32;
-  const cycleLoop = [0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 1, 1, 1, 1];
-  var currentLoopIndex = 0;
-  var frameCount = 0;
+//draw one frame of the character
+function drawFrame(frameX, frameY, canvasX, canvasY) {
 
-  //draw one frame of the character
-  function drawFrame(frameX, frameY, canvasX, canvasY) {
+  ctx.fillStyle = "#ffefc2";
+  ctx.fillRect(0,0,canvas.width, canvas.height);
+  ctx.drawImage(player,
+  frameX * width, frameY * height,
+  width, height,
+  canvasX, canvasY,
+  width, height);
+}
 
-    ctx.fillStyle = "#ffefc2";
-    ctx.fillRect(0,0,canvas.width, canvas.height);
-    ctx.drawImage(player,
-    frameX * width, frameY * height,
-    width, height,
-    canvasX, canvasY,
-    width, height);
-  }
+//one step of animation
+function step() {
+  //to slow down the character
 
-  //one step of animation
-  function step() {
-    //to slow down the character
-    frameCount++;
-    if(frameCount < 2) {
+    //if(movementTrue) {
+      frameCount++;
+      if(frameCount < 2) {
+        window.requestAnimationFrame(step);
+        return;
+      }
+      frameCount = 0;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      //draw the character frame
+      drawFrame(cycleLoop[currentLoopIndex], 0, currentX, currentY);
+      currentLoopIndex++;
+      if (currentLoopIndex >= cycleLoop.length) {
+        currentLoopIndex = 0;
+      }
       window.requestAnimationFrame(step);
-      return;
-    }
-    frameCount = 0;
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    //}
 
-    //draw the character frame
-    drawFrame(cycleLoop[currentLoopIndex], 0, currentX, currentY);
-    currentLoopIndex++;
-    if (currentLoopIndex >= cycleLoop.length) {
-      currentLoopIndex = 0;
-    }
-    window.requestAnimationFrame(step);
-  }
+}
 
   //actual animation
   function init() {
