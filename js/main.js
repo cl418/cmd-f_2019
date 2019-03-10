@@ -77,8 +77,9 @@ $(document).ready(function() {
         ctx.fillStyle = "black"
         ctx.fillRect(0, 0, 750, 570);
         ctx.globalAlpha += 0.1;
+        count++;
         console.log(ctx.globalAlpha);
-        if (ctx.globalAlpha > 0.9999999999999999) {
+        if (count > 25) {
           return;
         }
       }
