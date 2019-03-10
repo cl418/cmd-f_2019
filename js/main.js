@@ -12,4 +12,10 @@ $(document).ready(function(){
   var currentX = 10;
   var currentY = 10;
 
+  var player = new Image();
+  player.onload = function () {
+      ctx.drawImage(player, 400, 400);
+  }
+  player.src = "/../assets/alienPink_badge1.png";
+
 });
