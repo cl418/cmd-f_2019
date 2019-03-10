@@ -7,9 +7,18 @@ body {
 }
 
 .stats_bar {
-
+  padding-top: 0px;
 }
 
 .col-sm-6 {
-  padding-top: 50px;
+  height: 10vh;
+}
+
+.col-sm-12 {
+  float: bottom;
+  height: 80vh;
+}
+
+.playground {
+  background-color: #000000;
 }
