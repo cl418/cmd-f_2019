@@ -28,15 +28,16 @@ var frameCount = 0;
 var player = new Image();
 player.onload = function () {
   init();
-  //ctx.drawImage(player, 200, 200);
 };
 player.src = "./assets/char.png";
-//ctx.drawImage(player, 200, 200);
 
-//draw one frame of the screen
-function drawFrame(frameX, frameY, canvasX, canvasY) {
+//draw one frame of the character
+function draw(frameX, frameY, canvasX, canvasY) {
+  //draw other things
+  ctx.drawImage(desk, 300, 250);
+  ctx.drawImage(dog, 100, 50);
 
-  //game canvas
+  //character animation
   ctx.fillStyle = "#ffefc2";
   ctx.fillRect(0, 50, canvas.width, canvas.height);
 
@@ -52,30 +53,31 @@ function drawFrame(frameX, frameY, canvasX, canvasY) {
 }
 
 //one step of animation
-function step() {
+function update() {
   //to slow down the character
+    frameCount++;
+    if(frameCount < 2) {
+      window.requestAnimationFrame(update);
+      return;
+    }
+    frameCount = 0;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    //if(movementTrue) {
-      frameCount++;
-      if(frameCount < 2) {
-        window.requestAnimationFrame(step);
-        return;
-      }
-      frameCount = 0;
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    //draw the character frame
+    draw(cycleLoop[currentLoopIndex], 0, currentX, currentY);
+    currentLoopIndex++;
+    if (currentLoopIndex >= cycleLoop.length) {
+      currentLoopIndex = 0;
+    }
 
-      //draw the character frame
-      drawFrame(cycleLoop[currentLoopIndex], 0, currentX, currentY);
-      currentLoopIndex++;
-      if (currentLoopIndex >= cycleLoop.length) {
-        currentLoopIndex = 0;
-      }
-      window.requestAnimationFrame(step);
-    //}
+    //other functions that require requestAnimationFrame need to go here
+    //there should only be one requestAnimationFrame
+    increaseStress();
 
+    window.requestAnimationFrame(update);
 }
 
   //actual animation
   function init() {
-    window.requestAnimationFrame(step);
+    window.requestAnimationFrame(update);
   }
