@@ -86,7 +86,7 @@ function checkLocation(){
     objectCode = 0;
   }
 
-  console.log(objectCode);
+  //console.log(objectCode);
   //console.log(messageCode);
 }
 
