@@ -5,6 +5,14 @@ $(document).ready(function() {
   };
   player.src = "./assets/char.png";
 
+  //fill up the rectangle based on how much stress you have in percentages
+  function drawStatsBar(canv, canvWidth, canvHeight, stressLevel, xPos, color) {
+
+    let level = (stressLevel * canvWidth)/100;
+    ctx.fillStyle = color;
+    canv.fillRect(xPos, 0, level, canvHeight);
+
+  }
   //draw one frame of the character
   function draw(frameX, frameY, canvasX, canvasY) {
 
@@ -30,6 +38,13 @@ $(document).ready(function() {
     //other things
     ctx.drawImage(desk, 300, 250);
     ctx.drawImage(dog, 100, 50);
+
+    //player
+    ctx.drawImage(player,
+    frameX * width, frameY * height,
+    width, height,
+    canvasX, canvasY,
+    width, height);
 }
 
   //one step of animation
@@ -62,7 +77,10 @@ $(document).ready(function() {
         ctx.fillStyle = "black"
         ctx.fillRect(0, 0, 750, 570);
         ctx.globalAlpha += 0.1;
-        return;
+        console.log(ctx.globalAlpha);
+        if (ctx.globalAlpha > 0.9999999999999999) {
+          return;
+        }
       }
 
       window.requestAnimationFrame(update);

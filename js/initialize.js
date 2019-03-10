@@ -6,6 +6,21 @@ var fail = false;
 var canvasWidth = 750;
 var canvasHeight = 570;
 
+var barWidth = canvasWidth;
+var barHeight = 50;
+
+//STRESS//
+var stress = 0;
+var maxStress = 100;
+var stressColor = "#ffb266";
+var fail = false;
+
+//PROGRESS//
+var progress = 0;
+var maxProgress = 100;
+var progressColor = "#66DCFF";
+var win = false;
+
 var stress = 0;
 var maxStress = 100;
 
