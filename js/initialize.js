@@ -3,6 +3,7 @@ var ctx = canvas.getContext('2d');
 
 var fail = false;
 var count = 0;
+var objectCode = 0;
 
 var canvasWidth = 750;
 var canvasHeight = 400;
