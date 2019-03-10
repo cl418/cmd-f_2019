@@ -4,7 +4,7 @@ function checkMaxStress(){
     ctx.rect(200, 200, 200, 200);
     ctx.stroke();
     stress = 0;
-    //do smth else that indicates end of game
+    fail = true;
   }
 }
 
