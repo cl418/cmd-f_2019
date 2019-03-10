@@ -28,22 +28,24 @@ function downArrowPressed(){
 
 function checkLocation(){
   //borders
-  if (currentX > 612){
-    currentX = 612;
+  if (currentX > 718){
+    currentX = 718;
   }
   //right
   if (currentX < 0){
     currentX = 0;
   }
   //bottom
-  if (currentY > 612){
-    currentY = 612;
+  if (currentY > 368){
+    currentY = 368;
   }
   //top
   if (currentY < 50){
     console.log(currentY);
     currentY = 50;
   }
+
+
 
   /**
   * objects so won't run over them
@@ -76,6 +78,16 @@ function checkLocation(){
         objectCode = 3;
   }
 
+  else if (currentY > 250 && currentY < 320 && (
+    (currentX > 335 && currentX < 390) ||
+    (currentX > 455 && currentX < 510) ||
+    (currentX > 576 && currentX < 633)
+  )) {
+    currentX = lastX;
+    currentY = lastY;
+    objectCode = 4;
+    
+  }
 
  else {
     objectCode = 0;

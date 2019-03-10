@@ -44,3 +44,4 @@ var emoteIndexX = 0;
 var emoteIndexY = 0;
 var emoteCount = 0;
 var drawEmotes = false;
+var indifference = false;

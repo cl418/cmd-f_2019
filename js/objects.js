@@ -27,7 +27,12 @@ single1.src = "./assets/single1.png";
 var single2 = new Image();
 single2.onload = function() {
 };
-single1.src = "./assets.single2.png";
+single2.src = "./assets/single2.png";
+
+var single3 = new Image();
+single3.onload = function() {
+  };
+single3.src = "./assets/single3.png";
 
 function chooseAction(objectCode){
   if (objectCode == 0) {
@@ -41,6 +46,9 @@ function chooseAction(objectCode){
   }
   if(objectCode == 3) {
     groupInteraction();
+  }
+  if(objectCode == 4) {
+    //indifferent - dont do anything
   }
 }
 
