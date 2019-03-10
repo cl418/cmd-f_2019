@@ -30,11 +30,22 @@ function coding(){
   //tangled emote (9, 0)
   emoteIndexX = 9;
   emoteIndexY = 0;
+  //messageCode = 1;
   checkMaxStress();
   checkMaxProgress();
   if (win || lose) {
     ctx.globalAlpha = 0.1
   }
+}
+
+function groupInteraction() {
+  stress += mediumIncrease;
+  checkMaxStress();
+  drawEmotes = true;
+  //messageCode = 3;
+  //tangled thoughts emote = (9, 0)
+  emoteIndexX = 9;
+  emoteIndexY = 0;
 }
 
 //STRESS IS DECREASING?? WOW (aka progress related things)
@@ -47,15 +58,6 @@ function checkMaxProgress() {
 function increaseProgress() {
   progress += 1;
   checkMaxProgress();
-}
-
-function groupInteraction() {
-  stress += mediumIncrease;
-  checkMaxStress();
-  drawEmotes = true;
-  //tangled thoughts emote = (9, 0)
-  emoteIndexX = 9;
-  emoteIndexY = 0;
 }
 
 function talkToMentor() {
@@ -71,6 +73,7 @@ function petDog(){
   //heart = (1, 6)
   emoteIndexX = 1;
   emoteIndexY = 6;
+  messageCode = 2;
   minStressCheck();
 }
 

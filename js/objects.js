@@ -47,7 +47,13 @@ function chooseAction(objectCode){
     petDog();
   }
   else if(objectCode == 3) {
+    console.log("INTERACTION WITH GROUP");
     messageCode = 3;
     groupInteraction();
+  }
+  else if(objectCode == 4) {
+    drawEmotes = true;
+    emoteIndexX = 5;
+    emoteIndexY = 10;
   }
 }

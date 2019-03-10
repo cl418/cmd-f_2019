@@ -19,10 +19,10 @@ function printMessage() {
   else if (messageCode == 1) {
     ctx.fillText("You struggled with your project!", buffer, canvasHeight - 25);
   }
-  /*else if (messageCode = 2) {
+  else if (messageCode == 2) {
     ctx.fillText("Dogs are great", buffer, canvasHeight - 25);
-  }*/
-  else if (messageCode = 3) {
-    ctx.fillText("hey all know what they're doing....", buffer, canvasHeight - 25);
+  }
+  else if (messageCode == 3) {
+    ctx.fillText("They all know what they're doing....", buffer, canvasHeight - 25);
   }
 }

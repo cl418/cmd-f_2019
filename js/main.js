@@ -37,8 +37,6 @@ $(document).ready(function() {
     else {
       //background
       ctx.drawImage(background, 0, 0);
-      /*ctx.fillStyle = "#ffefc2";
-      ctx.fillRect(0, 50, canvas.width, canvas.height);*/
 
       //stats "canvas"
       ctx.fillStyle = "#ffefc2";
@@ -77,7 +75,7 @@ $(document).ready(function() {
       width, height);
 
       //message
-      //console.log(messageCode);
+      console.log(messageCode);
       printMessage();
     }
 }
