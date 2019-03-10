@@ -85,28 +85,43 @@ $(document).ready(function() {
         chooseEvent();
       }
 
+      //if you won
+      if (win) {
+        ctx.fillStyle = progressColor;
+        ctx.fillRect(0, 0, 750, 570);
+        ctx.globalAlpha += 0.1;
+        countWin++;
+        console.log(ctx.globalAlpha);
+        if (countWin > 18) {
+          ctx.fillStyle = stressColor;
+          ctx.font = "80px pixelFont"
+          ctx.fillText("YOU WIN", 200, 200);
+          return;
+        }
+      }
+
       //if you lost
       if (fail) {
         ctx.fillStyle = "black"
         ctx.fillRect(0, 0, 750, 570);
         ctx.globalAlpha += 0.1;
-        count++;
+        countLose++;
         console.log(ctx.globalAlpha);
-        if (count > 18) {
+        if (countLose > 18) {
           ctx.fillStyle = "white";
           ctx.font = "80px pixelFont"
           ctx.fillText("YOU LOSE", 200, 200);
           return;
         }
       }
-        
+
       window.requestAnimationFrame(update);
       //quick fix of emotes blanking out
       if(emoteCount >= 40) {
         drawEmotes = false;
         emoteCount = 0;
       }
-      
+
   }
 
   //actual animation

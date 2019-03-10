@@ -1,30 +1,18 @@
-//STRESS... IS... INCREASING
+//STRESS... IS... INCREASING (aka stress related things)
+var smallIncrease = 0.5;
+var mediumIncrease = 1;
+var highIncrease = 3;
+
 function checkMaxStress(){
   if (stress > maxStress){
-    ctx.rect(200, 200, 200, 200);
-    ctx.stroke();
-    stress = 0;
     fail = true;
     ctx.globalAlpha = 0.1;
   }
 }
 
-//STRESS IS DECREASIN?? WOW
 function minStressCheck(){
   if (stress < 0) {
     stress = 0
-  }
-}
-
-var smallIncrease = 0.5;
-var mediumIncrease = 1;
-var highIncrease = 3;
-
-function checkMaxProgress() {
-  if (progress >= maxProgress) {
-    progress = 0;
-    win = true;
-    //add a win condition
   }
 }
 
@@ -33,19 +21,31 @@ function increaseStress(){
   checkMaxStress();
 }
 
-function increaseProgress() {
-  progress += 1;
-  checkMaxProgress();
-}
-
 function coding(){
   stress += mediumIncrease;
-  progress += smallIncrease;
+  //progress += smallIncrease;
+  progress += highIncrease;
   drawEmotes = true;
   //the three dots = (5, 10)
   emoteIndexX = 5;
   emoteIndexY = 10;
   checkMaxStress();
+  checkMaxProgress();
+}
+
+//STRESS IS DECREASIN?? WOW (aka progress related things)
+function checkMaxProgress() {
+  console.log(progress);
+  if (progress >= maxProgress) {
+    win = true;
+    ctx.globalAlpha = 0.1;
+    console.log("hewwo??");
+  }
+}
+
+function increaseProgress() {
+  progress += 1;
+  checkMaxProgress();
 }
 
 function talkToMentor() {
