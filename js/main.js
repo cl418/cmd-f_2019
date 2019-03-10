@@ -80,7 +80,7 @@ $(document).ready(function() {
       //there should only be one requestAnimationFrame
       increaseStress();
 
-      var num = Math.floor((Math.random() * 1000) + 1);
+      var num = Math.floor((Math.random() * 5000) + 1);
       if (num == 1) {
         chooseEvent();
       }
@@ -95,22 +95,21 @@ $(document).ready(function() {
         if (countWin > 18) {
           ctx.fillStyle = stressColor;
           ctx.font = "80px pixelFont"
-          ctx.fillText("YOU WIN", 200, 200);
+          ctx.fillText("YOU WIN", 250, 200);
           return;
         }
       }
 
       //if you lost
-      if (fail) {
+      if (lose) {
         ctx.fillStyle = "black"
         ctx.fillRect(0, 0, 750, 570);
         ctx.globalAlpha += 0.1;
         countLose++;
-        console.log(ctx.globalAlpha);
         if (countLose > 18) {
           ctx.fillStyle = "white";
           ctx.font = "80px pixelFont"
-          ctx.fillText("YOU LOSE", 200, 200);
+          ctx.fillText("YOU LOSE", 250, 200);
           return;
         }
       }

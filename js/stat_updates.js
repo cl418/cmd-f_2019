@@ -5,8 +5,7 @@ var highIncrease = 3;
 
 function checkMaxStress(){
   if (stress > maxStress){
-    fail = true;
-    ctx.globalAlpha = 0.1;
+    lose = true;
   }
 }
 
@@ -23,23 +22,22 @@ function increaseStress(){
 
 function coding(){
   stress += mediumIncrease;
-  //progress += smallIncrease;
-  progress += highIncrease;
+  progress += smallIncrease;
   drawEmotes = true;
   //the three dots = (5, 10)
   emoteIndexX = 5;
   emoteIndexY = 10;
   checkMaxStress();
   checkMaxProgress();
+  if (win || lose) {
+    ctx.globalAlpha = 0.1
+  }
 }
 
-//STRESS IS DECREASIN?? WOW (aka progress related things)
+//STRESS IS DECREASING?? WOW (aka progress related things)
 function checkMaxProgress() {
-  console.log(progress);
   if (progress >= maxProgress) {
     win = true;
-    ctx.globalAlpha = 0.1;
-    console.log("hewwo??");
   }
 }
 
