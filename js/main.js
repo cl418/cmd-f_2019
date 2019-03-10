@@ -45,30 +45,31 @@ function drawFrame(frameX, frameY, canvasX, canvasY) {
 }
 
 //one step of animation
-function step() {
+function update() {
   //to slow down the character
+    frameCount++;
+    if(frameCount < 2) {
+      window.requestAnimationFrame(update);
+      return;
+    }
+    frameCount = 0;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    //if(movementTrue) {
-      frameCount++;
-      if(frameCount < 2) {
-        window.requestAnimationFrame(step);
-        return;
-      }
-      frameCount = 0;
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    //draw the character frame
+    drawFrame(cycleLoop[currentLoopIndex], 0, currentX, currentY);
+    currentLoopIndex++;
+    if (currentLoopIndex >= cycleLoop.length) {
+      currentLoopIndex = 0;
+    }
 
-      //draw the character frame
-      drawFrame(cycleLoop[currentLoopIndex], 0, currentX, currentY);
-      currentLoopIndex++;
-      if (currentLoopIndex >= cycleLoop.length) {
-        currentLoopIndex = 0;
-      }
-      window.requestAnimationFrame(step);
-    //}
+    //other functions that require requestAnimationFrame need to go here
+    //there should only be one requestAnimationFrame
+    increaseStress();
 
+    window.requestAnimationFrame(update);
 }
 
   //actual animation
   function init() {
-    window.requestAnimationFrame(step);
+    window.requestAnimationFrame(update);
   }
